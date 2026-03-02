@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Sign In — ISRC 2026</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="css/style.css"/>
+<style>
+  body { background: var(--ink); display: flex; min-height: 100vh; }
+
+  /* ── Left panel ── */
+  .panel-left {
+    flex: 1; display: flex; flex-direction: column; justify-content: space-between;
+    padding: 56px 60px; position: relative; overflow: hidden;
+    border-right: 1px solid rgba(255,255,255,.06);
+  }
+  .panel-left::before {
+    content: ''; position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 60% at 10% 90%, rgba(27,63,139,.3), transparent 60%),
+                radial-gradient(ellipse 50% 50% at 90% 10%, rgba(196,154,47,.08), transparent 55%);
+  }
+  .grid-bg {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+    background-size: 52px 52px;
+  }
+  .panel-left > * { position: relative; z-index: 1; }
+
+  .logo { display: flex; align-items: center; gap: 15px; }
+  .logo svg { width: 52px; height: 52px; }
+  .logo-text .brand {
+    font-family: var(--ff-d); font-size: 26px; font-weight: 700;
+    color: var(--white); letter-spacing: .1em; display: block;
+  }
+  .logo-text .full {
+    font-size: 10px; color: var(--slate); letter-spacing: .08em;
+    text-transform: uppercase; display: block; margin-top: 2px;
+  }
+
+  .tagline h1 {
+    font-size: clamp(34px, 4vw, 52px); font-weight: 400;
+    color: var(--white); margin-bottom: 18px;
+  }
+  .tagline h1 em { font-style: italic; color: var(--gold-l); }
+  .tagline p { color: var(--slate); font-size: 15px; font-weight: 300; line-height: 1.8; max-width: 380px; }
+
+  .panel-stats { display: flex; gap: 48px; }
+  .ps-val { font-family: var(--ff-d); font-size: 38px; color: var(--gold-l); display: block; }
+  .ps-lbl { font-size: 11px; color: var(--slate); letter-spacing: .1em; text-transform: uppercase; }
+
+  /* ── Right panel (auth forms) ── */
+  .panel-right {
+    width: 460px; display: flex; align-items: center; justify-content: center;
+    padding: 48px 50px; overflow-y: auto;
+  }
+  .auth-box { width: 100%; max-width: 360px; }
+  .auth-box h2 {
+    font-family: var(--ff-d); font-size: 30px; color: var(--white); margin-bottom: 4px;
+  }
+  .auth-box .sub { font-size: 13px; color: var(--slate); margin-bottom: 28px; }
+  .auth-box .sub a { color: var(--gold-l); cursor: pointer; }
+  .auth-box .sub a:hover { text-decoration: underline; }
+
+  .divider { display:flex; align-items:center; gap:12px; margin:18px 0; }
+  .divider::before, .divider::after { content:''; flex:1; height:1px; background:rgba(255,255,255,.08); }
+  .divider span { font-size:11px; color:var(--slate); letter-spacing:.06em; }
+
+  /* Tabs */
+  .form-tabs { display:flex; gap:4px; margin-bottom:28px; }
+  .form-tab {
+    flex:1; padding:10px; border:none; border-radius:var(--r);
+    font-family:var(--ff-b); font-size:13px; font-weight:500; cursor:pointer;
+    background:rgba(255,255,255,.06); color:var(--slate); transition:all .2s;
+  }
+  .form-tab.active { background:var(--gold); color:var(--ink); font-weight:600; }
+
+  .form-panel { display:none; }
+  .form-panel.active { display:block; }
+
+  @media (max-width:820px) { .panel-left { display:none; } .panel-right { width:100%; } }
+</style>
+</head>
+<body>
+
+<!-- Left branding -->
+<div class="panel-left">
+  <div class="grid-bg"></div>
+  <div class="logo">
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="30" fill="#0f1c38" stroke="#1b3f8b" stroke-width="1.5"/>
+      <circle cx="32" cy="32" r="22" fill="none" stroke="#c49a2f" stroke-width="1" opacity="0.6"/>
+      <polygon points="32,8 37,22 52,22 40,31 44.5,46 32,37.5 19.5,46 24,31 12,22 27,22" fill="#1b3f8b"/>
+      <polygon points="32,13 36,24 48,24 38.5,31 42,43 32,36.5 22,43 25.5,31 16,24 28,24" fill="#c49a2f" opacity="0.7"/>
+      <circle cx="32" cy="32" r="3.5" fill="#ffffff" opacity="0.9"/>
+    </svg>
+    <div class="logo-text">
+      <span class="brand">ISRC</span>
+      <span class="full">International Scholars Research Competition</span>
+    </div>
+  </div>
+
+  <div class="tagline">
+    <h1>Where <em>brilliant</em><br/>minds compete<br/>and excel.</h1>
+    <p>ISRC 2026 unites the world's most promising student researchers across 18 disciplines — from molecular biology to computational theory.</p>
+  </div>
+
+  <div class="panel-stats">
+    <div><span class="ps-val">48+</span><span class="ps-lbl">Countries</span></div>
+    <div><span class="ps-val">2,400</span><span class="ps-lbl">Scholars</span></div>
+    <div><span class="ps-val">$120K</span><span class="ps-lbl">Prize Pool</span></div>
+  </div>
+</div>
+
+<!-- Right auth panel -->
+<div class="panel-right">
+  <div class="auth-box">
+
+    <div class="form-tabs">
+      <button class="form-tab active" onclick="showTab('signin')">Sign In</button>
+      <button class="form-tab" onclick="showTab('register')">Register</button>
+    </div>
+
+    <!-- SIGN IN -->
+    <div class="form-panel active" id="panel-signin">
+      <div id="si-msg" class="alert"></div>
+      <div class="field"><label>Email</label><input type="email" id="si-email" placeholder="scholar@university.edu"/></div>
+      <div class="field"><label>Password</label><input type="password" id="si-pass" placeholder="••••••••"/></div>
+      <button class="btn btn-gold btn-full" style="margin-top:4px" onclick="doSignIn()">Sign In</button>
+      <div class="divider"><span>OR</span></div>
+      <button class="btn btn-ghost btn-full" onclick="demoLogin()">Continue as Demo Scholar</button>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="form-panel" id="panel-register">
+      <div id="reg-msg" class="alert"></div>
+      <div class="field">
+        <div class="field-row">
+          <div><label>First name</label><input type="text" id="r-fn" placeholder="Emma"/></div>
+          <div><label>Last name</label><input type="text" id="r-ln" placeholder="Schmidt"/></div>
+        </div>
+      </div>
+      <div class="field"><label>Email</label><input type="email" id="r-em" placeholder="emma@university.edu"/></div>
+      <div class="field"><label>Institution</label><input type="text" id="r-in" placeholder="University of Cambridge"/></div>
+      <div class="field">
+        <div class="field-row">
+          <div>
+            <label>Country</label>
+            <select id="r-co">
+              <option value="">Select…</option>
+              <option>Argentina</option><option>Australia</option><option>Austria</option>
+              <option>Bangladesh</option><option>Belgium</option><option>Brazil</option>
+              <option>Canada</option><option>China</option><option>Colombia</option>
+              <option>Czech Republic</option><option>Denmark</option><option>Egypt</option>
+              <option>Finland</option><option>France</option><option>Germany</option>
+              <option>Ghana</option><option>Greece</option><option>India</option>
+              <option>Indonesia</option><option>Iran</option><option>Ireland</option>
+              <option>Israel</option><option>Italy</option><option>Japan</option>
+              <option>Kazakhstan</option><option>Kenya</option><option>Malaysia</option>
+              <option>Mexico</option><option>Morocco</option><option>Netherlands</option>
+              <option>New Zealand</option><option>Nigeria</option><option>Norway</option>
+              <option>Pakistan</option><option>Philippines</option><option>Poland</option>
+              <option>Portugal</option><option>Romania</option><option>Russia</option>
+              <option>Saudi Arabia</option><option>Singapore</option><option>South Africa</option>
+              <option>South Korea</option><option>Spain</option><option>Sweden</option>
+              <option>Switzerland</option><option>Thailand</option><option>Turkey</option>
+              <option>Ukraine</option><option>United Kingdom</option><option>United States</option>
+              <option>Vietnam</option><option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label>Research Track</label>
+            <select id="r-tr">
+              <option value="">Select…</option>
+              <option>Life Sciences</option>
+              <option>Physical Sciences</option>
+              <option>Computer Science & AI</option>
+              <option>Social Sciences</option>
+              <option>Environmental Sciences</option>
+              <option>Engineering</option>
+              <option>Medicine & Health</option>
+              <option>Humanities & Arts</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="field-row">
+          <div><label>Password</label><input type="password" id="r-pw" placeholder="Min 8 chars"/></div>
+          <div><label>Confirm</label><input type="password" id="r-pw2" placeholder="Repeat"/></div>
+        </div>
+      </div>
+      <button class="btn btn-gold btn-full" onclick="doRegister()">Create Account</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+<script>
+  /* redirect if already logged in */
+  if (DB.getUser()) location.href = 'pages/home.html';
+
+  function showTab(t) {
+    document.querySelectorAll('.form-tab').forEach((b,i)=>b.classList.toggle('active', (i===0&&t==='signin')||(i===1&&t==='register')));
+    document.getElementById('panel-signin').classList.toggle('active', t==='signin');
+    document.getElementById('panel-register').classList.toggle('active', t==='register');
+  }
+
+  function showMsg(id, type, msg) {
+    const el = document.getElementById(id);
+    el.className = 'alert show alert-' + type;
+    el.textContent = msg;
+  }
+
+  function doSignIn() {
+    const email = document.getElementById('si-email').value.trim();
+    const pass  = document.getElementById('si-pass').value;
+    if (!email || !pass) return showMsg('si-msg','err','Please enter your email and password.');
+    const user = DB.getUsers().find(u => u.email === email && u.pass === pass);
+    if (!user) return showMsg('si-msg','err','Invalid credentials. Try the demo login!');
+    DB.saveUser(user);
+    location.href = 'pages/home.html';
+  }
+
+  function demoLogin() {
+    const demo = {
+      fname:'Alex', lname:'Laurent', email:'demo@isrc.org', inst:'University of Geneva',
+      country:'Switzerland', track:'Computer Science & AI', paid:false,
+      certId:'ISRC-2026-CS-00482'
+    };
+    DB.saveUser(demo);
+    location.href = 'pages/home.html';
+  }
+
+  function doRegister() {
+    const fn = document.getElementById('r-fn').value.trim();
+    const ln = document.getElementById('r-ln').value.trim();
+    const em = document.getElementById('r-em').value.trim();
+    const inst = document.getElementById('r-in').value.trim();
+    const co = document.getElementById('r-co').value;
+    const tr = document.getElementById('r-tr').value;
+    const pw = document.getElementById('r-pw').value;
+    const pw2 = document.getElementById('r-pw2').value;
+
+    if (!fn||!ln||!em||!inst||!co||!tr||!pw) return showMsg('reg-msg','err','Please complete all fields.');
+    if (pw.length < 8) return showMsg('reg-msg','err','Password must be at least 8 characters.');
+    if (pw !== pw2) return showMsg('reg-msg','err','Passwords do not match.');
+    const users = DB.getUsers();
+    if (users.find(u=>u.email===em)) return showMsg('reg-msg','err','This email is already registered.');
+
+    const code = tr.split(' ')[0].slice(0,2).toUpperCase();
+    const num  = String(Math.floor(Math.random()*90000)+10000);
+    const u = { fname:fn, lname:ln, email:em, inst, country:co, track:tr, pass:pw, paid:false, certId:`ISRC-2026-${code}-${num}` };
+    users.push(u);
+    DB.saveUsers(users);
+    DB.saveUser(u);
+    showMsg('reg-msg','ok','Account created! Redirecting…');
+    setTimeout(() => location.href = 'pages/home.html', 1100);
+  }
+</script>
+</body>
+</html>

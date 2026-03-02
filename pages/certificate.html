@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Certificate — ISRC 2026</title>
+<link rel="icon" href="../icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+  .cert-page { max-width: 900px; margin: 0 auto; padding: 40px; }
+
+  /* Controls bar */
+  .cert-controls {
+    background: var(--white); border: 1px solid var(--border); border-radius: var(--r);
+    padding: 18px 22px; margin-bottom: 28px;
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  .cert-status { display: flex; align-items: center; gap: 12px; }
+  .cert-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+  .cert-status-text strong { display: block; font-size: 14px; color: var(--text); }
+  .cert-status-text span   { font-size: 12px; color: var(--muted); }
+  .cert-actions { display: flex; gap: 8px; }
+  .cert-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 16px; border-radius: var(--r); border: 1px solid var(--border);
+    background: none; font-family: var(--ff-b); font-size: 13px; font-weight: 500;
+    color: var(--text); cursor: pointer; transition: all .18s;
+  }
+  .cert-btn:hover { border-color: var(--blue); color: var(--blue); }
+  .cert-btn.primary { background: var(--blue); color: var(--white); border-color: var(--blue); }
+  .cert-btn.primary:hover { background: var(--blue-b); }
+  .cert-btn svg { width: 14px; height: 14px; }
+
+  /* ── THE CERTIFICATE ── */
+  .cert-wrap { display: flex; justify-content: center; margin-bottom: 28px; }
+  .certificate {
+    width: 100%; max-width: 780px;
+    background: #f9f6ef;
+    border-radius: 4px;
+    aspect-ratio: 1.414 / 1;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 8px 40px rgba(8,13,26,.14), 0 0 0 1px rgba(196,154,47,.22);
+    font-family: 'Playfair Display', serif;
+  }
+
+  /* Borders */
+  .c-b1 { position: absolute; inset: 12px; border: 1.5px solid rgba(196,154,47,.45); border-radius: 2px; pointer-events: none; z-index: 2; }
+  .c-b2 { position: absolute; inset: 16px; border: .5px solid rgba(196,154,47,.2);  border-radius: 1px; pointer-events: none; z-index: 2; }
+
+  /* Corner ornaments */
+  .c-corner { position: absolute; width: 28px; height: 28px; z-index: 3; }
+  .c-corner svg { width: 28px; height: 28px; }
+  .c-corner.tl { top: 8px; left: 8px; }
+  .c-corner.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+  .c-corner.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+  .c-corner.br { bottom: 8px; right: 8px; transform: scale(-1,-1); }
+
+  /* Watermark */
+  .c-wm { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; z-index: 0; opacity: .04; }
+  .c-wm svg { width: 320px; height: 320px; }
+
+  /* Content */
+  .c-body {
+    position: relative; z-index: 1; flex: 1;
+    display: flex; flex-direction: column; align-items: center;
+    justify-content: center; padding: 36px 60px; text-align: center;
+  }
+  .c-org  { font-family: 'Jost', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: #c49a2f; margin-bottom: 5px; }
+  .c-head { font-size: clamp(28px, 5vw, 50px); font-weight: 700; color: #080d1a; letter-spacing: .03em; line-height: 1; }
+  .c-sub  { font-family: 'Jost', sans-serif; font-size: clamp(9px, 1.4vw, 12px); letter-spacing: .16em; text-transform: uppercase; color: #7a8aaa; margin: 5px 0 14px; }
+  .c-rule { width: 56px; height: 1px; background: #c49a2f; margin: 0 auto 14px; }
+  .c-pres { font-size: clamp(11px, 1.7vw, 14px); font-style: italic; color: #7a8aaa; margin-bottom: 8px; }
+  .c-name { font-size: clamp(22px, 4vw, 42px); font-weight: 700; color: #1b3f8b; font-style: italic; margin-bottom: 5px; }
+  .c-track { font-family: 'Jost', sans-serif; font-size: clamp(10px, 1.5vw, 13px); color: #7a8aaa; letter-spacing: .05em; margin-bottom: 14px; }
+  .c-text { font-family: 'Jost', sans-serif; font-size: clamp(9px, 1.3vw, 12px); color: #3a3f52; line-height: 1.65; max-width: 68%; }
+
+  .c-sigs { display: flex; justify-content: space-around; width: 100%; margin-top: 16px; align-items: flex-end; }
+  .c-sig { text-align: center; }
+  .c-sig-name { font-size: clamp(10px, 1.7vw, 15px); font-weight: 700; color: #080d1a; border-top: 1px solid rgba(27,63,139,.25); padding-top: 5px; margin-bottom: 2px; }
+  .c-sig-role { font-family: 'Jost', sans-serif; font-size: clamp(7px, 1.1vw, 10px); color: #7a8aaa; letter-spacing: .06em; text-transform: uppercase; }
+
+  .c-id { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-family: 'Jost', sans-serif; font-size: 8px; color: #aaa; letter-spacing: .07em; z-index: 3; white-space: nowrap; }
+
+  /* Meta cards */
+  .cert-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .meta-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 16px; text-align: center; }
+  .meta-val { font-family: var(--ff-d); font-size: 20px; font-weight: 700; color: var(--blue); }
+  .meta-lbl { font-size: 11px; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; margin-top: 3px; }
+
+  @media (max-width: 600px) {
+    .cert-page { padding: 20px; }
+    .cert-meta { grid-template-columns: 1fr; }
+    .c-body { padding: 24px 28px; }
+    .c-text { max-width: 90%; }
+  }
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<div class="pg-header">
+  <h2>Participation <em>Certificate</em></h2>
+  <p>Your official certificate of participation in ISRC 2026</p>
+</div>
+
+<div class="cert-page">
+  <!-- Controls -->
+  <div class="cert-controls">
+    <div class="cert-status">
+      <div class="cert-dot" id="cdot"></div>
+      <div class="cert-status-text">
+        <strong id="cstatus-title">Loading…</strong>
+        <span id="cstatus-sub"></span>
+      </div>
+    </div>
+    <div class="cert-actions">
+      <button class="cert-btn" onclick="printCert()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+        Print
+      </button>
+      <button class="cert-btn" onclick="toast('Certificate saved as PDF')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download
+      </button>
+      <button class="cert-btn primary" onclick="toast('Certificate emailed to your address!')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email to Me
+      </button>
+    </div>
+  </div>
+
+  <!-- Certificate -->
+  <div class="cert-wrap">
+    <div class="certificate" id="the-cert">
+      <div class="c-b1"></div>
+      <div class="c-b2"></div>
+
+      <!-- Corner ornaments -->
+      <div class="c-corner tl"><svg viewBox="0 0 28 28" fill="none"><path d="M2 2L26 2L2 26" stroke="#c49a2f" stroke-width="1.5" opacity=".55"/><circle cx="2" cy="2" r="2.5" fill="#c49a2f" opacity=".7"/></svg></div>
+      <div class="c-corner tr"><svg viewBox="0 0 28 28" fill="none"><path d="M2 2L26 2L2 26" stroke="#c49a2f" stroke-width="1.5" opacity=".55"/><circle cx="2" cy="2" r="2.5" fill="#c49a2f" opacity=".7"/></svg></div>
+      <div class="c-corner bl"><svg viewBox="0 0 28 28" fill="none"><path d="M2 2L26 2L2 26" stroke="#c49a2f" stroke-width="1.5" opacity=".55"/><circle cx="2" cy="2" r="2.5" fill="#c49a2f" opacity=".7"/></svg></div>
+      <div class="c-corner br"><svg viewBox="0 0 28 28" fill="none"><path d="M2 2L26 2L2 26" stroke="#c49a2f" stroke-width="1.5" opacity=".55"/><circle cx="2" cy="2" r="2.5" fill="#c49a2f" opacity=".7"/></svg></div>
+
+      <!-- Watermark -->
+      <div class="c-wm">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="30" stroke="#1b3f8b" stroke-width="2"/>
+          <polygon points="32,8 37,22 52,22 40,31 44.5,46 32,37.5 19.5,46 24,31 12,22 27,22" fill="#1b3f8b"/>
+        </svg>
+      </div>
+
+      <div class="c-body">
+        <div class="c-org">International Scholars Research Competition · ISRC 2026</div>
+        <div class="c-head">Certificate</div>
+        <div class="c-sub">of Participation</div>
+        <div class="c-rule"></div>
+        <div class="c-pres">This certificate is proudly presented to</div>
+        <div class="c-name" id="c-recipient">Alex Laurent</div>
+        <div class="c-track">Track: <span id="c-track">Computer Science & AI</span> · <span id="c-inst">University of Geneva</span></div>
+        <div class="c-text">In recognition of outstanding participation and the submission of original research to the 12th International Scholars Research Competition, held in Geneva, Switzerland, October 2026.</div>
+        <div class="c-sigs">
+          <div class="c-sig">
+            <div class="c-sig-name">Prof. Elena Marchetti</div>
+            <div class="c-sig-role">President, ISRC Board</div>
+          </div>
+          <div class="c-sig" style="padding:0 10px">
+            <svg viewBox="0 0 64 64" fill="none" style="width:46px;height:46px">
+              <circle cx="32" cy="32" r="29" stroke="#1b3f8b" stroke-width="1.5" opacity=".3"/>
+              <polygon points="32,10 36.5,22 50,22 39.5,30 43.5,43 32,35.5 20.5,43 24.5,30 14,22 27.5,22" fill="#1b3f8b" opacity=".45"/>
+              <circle cx="32" cy="32" r="20" stroke="#c49a2f" stroke-width=".8" opacity=".4"/>
+            </svg>
+          </div>
+          <div class="c-sig">
+            <div class="c-sig-name">Dr. James Okonkwo</div>
+            <div class="c-sig-role">Secretary General</div>
+          </div>
+        </div>
+      </div>
+      <div class="c-id" id="c-id">ISRC-2026-CS-00482 · Issued March 2, 2026 · Verify at isrc2026.org/verify</div>
+    </div>
+  </div>
+
+  <!-- Meta -->
+  <div class="cert-meta">
+    <div class="meta-card"><div class="meta-val" id="m-id">ISRC-2026-CS-00482</div><div class="meta-lbl">Certificate ID</div></div>
+    <div class="meta-card"><div class="meta-val">March 2, 2026</div><div class="meta-lbl">Issue Date</div></div>
+    <div class="meta-card"><div class="meta-val" id="m-track">Computer Science</div><div class="meta-lbl">Research Track</div></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="toast-msg"></span></div>
+
+<script src="../js/app.js"></script>
+<script>
+  const u = requireAuth();
+  if (u) {
+    renderNav('certificate');
+
+    // Populate
+    const full = u.fname + ' ' + u.lname;
+    document.getElementById('c-recipient').textContent = full;
+    document.getElementById('c-track').textContent     = u.track || 'General';
+    document.getElementById('c-inst').textContent      = u.inst  || '';
+    document.getElementById('c-id').textContent        = `${u.certId} · Issued March 2, 2026 · Verify at isrc2026.org/verify`;
+    document.getElementById('m-id').textContent        = u.certId;
+    document.getElementById('m-track').textContent     = (u.track || 'General').split(' ')[0];
+
+    // Status
+    const dot = document.getElementById('cdot');
+    const title = document.getElementById('cstatus-title');
+    const sub   = document.getElementById('cstatus-sub');
+    if (u.paid) {
+      dot.style.background = '#28a06a';
+      title.textContent    = 'Certificate Ready';
+      sub.textContent      = 'Your certificate is verified and ready to download.';
+    } else {
+      dot.style.background = '#c49a2f';
+      title.textContent    = 'Registration Pending Payment';
+      sub.textContent      = 'Complete payment to receive your official verified certificate.';
+    }
+  }
+
+  function printCert() {
+    const cert = document.getElementById('the-cert').outerHTML;
+    const w = window.open('', '_blank');
+    w.document.write(`<!DOCTYPE html><html><head>
+      <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+      <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#f4f1eb}
+        .certificate{width:90vw;max-width:760px;background:#f9f6ef;border-radius:4px;aspect-ratio:1.414/1;position:relative;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 8px 40px rgba(8,13,26,.14)}
+        @media print{body{background:white}.certificate{width:100%;box-shadow:none}}
+      </style></head><body>${cert}</body></html>`);
+    w.document.close();
+    setTimeout(() => w.print(), 700);
+  }
+</script>
+</body>
+</html>

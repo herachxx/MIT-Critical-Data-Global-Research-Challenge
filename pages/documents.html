@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Documents — ISRC 2026</title>
+<link rel="icon" href="../icon.svg" type="image/svg+xml"/>
+<link rel="stylesheet" href="../css/style.css"/>
+<style>
+  .docs-layout { display: grid; grid-template-columns: 220px 1fr; gap: 28px; max-width: 1040px; margin: 0 auto; padding: 40px; }
+
+  .doc-nav { position: sticky; top: calc(var(--nav-h) + 16px); align-self: start; }
+  .doc-nav-item {
+    display: flex; align-items: center; gap: 9px; width: 100%;
+    padding: 9px 14px; border-radius: var(--r); border: none; background: none;
+    font-family: var(--ff-b); font-size: 13px; font-weight: 400; color: var(--muted);
+    cursor: pointer; transition: all .18s; text-align: left; text-decoration: none;
+  }
+  .doc-nav-item:hover { color: var(--blue); background: rgba(27,63,139,.06); }
+  .doc-nav-item.active { color: var(--blue); background: rgba(27,63,139,.1); font-weight: 600; }
+  .doc-nav-item svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .doc-dl { margin-top: 20px; padding: 16px; border: 1px solid var(--border); border-radius: var(--r); background: rgba(27,63,139,.03); }
+  .doc-dl p { font-size: 11px; color: var(--muted); letter-spacing: .07em; text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
+
+  /* Article */
+  .doc-article > * + * { margin-top: 18px; }
+
+  .doc-block { background: var(--white); border: 1px solid var(--border); border-radius: var(--r); padding: 30px; scroll-margin-top: calc(var(--nav-h) + 20px); }
+  .doc-block h3 {
+    font-family: var(--ff-d); font-size: 22px; color: var(--ink);
+    padding-bottom: 10px; border-bottom: 2px solid var(--gold);
+    display: inline-block; margin-bottom: 16px;
+  }
+  .doc-block p { font-size: 14px; color: var(--text); line-height: 1.85; margin-bottom: 10px; }
+  .doc-block ul { margin: 10px 0 10px 20px; }
+  .doc-block li { font-size: 14px; color: var(--text); line-height: 1.85; margin-bottom: 5px; }
+
+  .rule-row { display: flex; align-items: flex-start; gap: 14px; padding: 13px 0; border-bottom: 1px solid var(--border); }
+  .rule-row:last-child { border-bottom: none; }
+  .rule-num {
+    width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: var(--white); margin-top: 2px;
+  }
+  .rule-title { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 3px; }
+  .rule-desc  { font-size: 13px; color: var(--muted); line-height: 1.65; }
+
+  @media (max-width: 768px) {
+    .docs-layout { grid-template-columns: 1fr; padding: 24px 20px; }
+    .doc-nav { position: static; display: flex; flex-wrap: wrap; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+<div id="nav-slot"></div>
+
+<div class="pg-header">
+  <h2>Documents <em>&</em> Rules</h2>
+  <p>Official competition guidelines, formatting requirements, and policies</p>
+</div>
+
+<div class="docs-layout">
+  <!-- Sidebar -->
+  <aside class="doc-nav">
+    <button class="doc-nav-item active" onclick="goto('sec-overview',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Overview
+    </button>
+    <button class="doc-nav-item" onclick="goto('sec-eligibility',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>Eligibility
+    </button>
+    <button class="doc-nav-item" onclick="goto('sec-submission',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>Submission
+    </button>
+    <button class="doc-nav-item" onclick="goto('sec-judging',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Judging
+    </button>
+    <button class="doc-nav-item" onclick="goto('sec-prizes',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15c3.31 0 6-2.69 6-6V3H6v6c0 3.31 2.69 6 6 6z"/><line x1="12" y1="15" x2="12" y2="21"/><line x1="8" y1="21" x2="16" y2="21"/></svg>Prizes
+    </button>
+    <button class="doc-nav-item" onclick="goto('sec-ethics',this)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Ethics
+    </button>
+
+    <div class="doc-dl">
+      <p>Downloads</p>
+      <button class="btn btn-blue btn-full btn-sm" style="margin-bottom:8px" onclick="toast('Downloading Rulebook PDF…')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Full Rulebook
+      </button>
+      <button class="btn btn-gold btn-full btn-sm" onclick="toast('Downloading paper template…')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Paper Template
+      </button>
+    </div>
+  </aside>
+
+  <!-- Content -->
+  <div class="doc-article">
+
+    <div class="doc-block" id="sec-overview">
+      <h3>Competition Overview</h3>
+      <p>The International Scholars Research Competition (ISRC) 2026 is a prestigious annual academic competition inviting undergraduate and graduate student researchers from institutions worldwide to present original research across a wide range of disciplines.</p>
+      <p>ISRC aims to foster academic excellence, cross-cultural collaboration, and scientific communication. Now in its <strong>12th year</strong>, ISRC has helped launch the careers of over 14,000 scholars from 80+ countries. The 2026 finals will be held in <strong>Geneva, Switzerland</strong>, with a hybrid option for finalists unable to attend in person.</p>
+    </div>
+
+    <div class="doc-block" id="sec-eligibility">
+      <h3>Eligibility Requirements</h3>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--blue)">1</div>
+        <div><div class="rule-title">Enrollment Status</div><div class="rule-desc">Currently enrolled as undergraduate (year 2+), master's, or first/second-year doctoral students at an accredited university at the time of abstract submission.</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--blue)">2</div>
+        <div><div class="rule-title">Institutional Affiliation</div><div class="rule-desc">Research must be affiliated with the registered institution. Faculty supervisor name and contact must be provided at submission.</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--blue)">3</div>
+        <div><div class="rule-title">Original Work</div><div class="rule-desc">Research must be original and not previously published in a peer-reviewed journal. Preprints on arXiv, bioRxiv, or SSRN are permitted.</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--blue)">4</div>
+        <div><div class="rule-title">Team Size</div><div class="rule-desc">Individual or team submissions (max 4 members). Each member registers individually; one lead author submits on behalf of the team.</div></div>
+      </div>
+    </div>
+
+    <div class="doc-block" id="sec-submission">
+      <h3>Submission Guidelines</h3>
+      <p><strong>Stage 1 — Abstract</strong> (Due March 1, 2026)</p>
+      <ul>
+        <li>500–800 words, structured: Background, Methods, Results, Conclusion</li>
+        <li>Submitted via the ISRC portal in PDF format</li>
+        <li>Must include 5 keywords and a track selection</li>
+      </ul>
+      <p style="margin-top:14px"><strong>Stage 2 — Full Paper</strong> (Due June 15, 2026, by invitation)</p>
+      <ul>
+        <li>Maximum 12,000 words excluding references and appendices</li>
+        <li>Formatted using the ISRC official template (available above)</li>
+        <li>Double-spaced, 12pt, 1-inch margins; APA 7th or Chicago 17th citations</li>
+        <li>Data availability statement required; raw data provided on request</li>
+        <li>Supplementary materials submitted as separate attachments</li>
+      </ul>
+    </div>
+
+    <div class="doc-block" id="sec-judging">
+      <h3>Judging Criteria</h3>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--gold)">A</div>
+        <div><div class="rule-title">Originality & Innovation — 30 pts</div><div class="rule-desc">Is the research question novel? Does the work make a meaningful contribution? Are the methods or findings innovative?</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--gold)">B</div>
+        <div><div class="rule-title">Methodological Rigor — 25 pts</div><div class="rule-desc">Are methods appropriate and correctly applied? Is the sample/dataset adequate? Are analyses sound?</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--gold)">C</div>
+        <div><div class="rule-title">Significance of Findings — 25 pts</div><div class="rule-desc">Do results have meaningful implications? Are limitations acknowledged? Does the work advance knowledge?</div></div>
+      </div>
+      <div class="rule-row">
+        <div class="rule-num" style="background:var(--gold)">D</div>
+        <div><div class="rule-title">Clarity & Presentation — 20 pts</div><div class="rule-desc">Is the paper clearly written and well-structured? Are figures and tables informative and properly labeled?</div></div>
+      </div>
+    </div>
+
+    <div class="doc-block" id="sec-prizes">
+      <h3>Prizes & Awards</h3>
+      <p>Prizes are awarded per research track. The overall Grand Prix winner receives the highest honor of the competition.</p>
+      <ul>
+        <li><strong>Grand Prix:</strong> $15,000 + Gold Medal + Publication in ISRC Annual Journal</li>
+        <li><strong>Track Gold:</strong> $5,000 + Gold Certificate + Publication recommendation</li>
+        <li><strong>Track Silver:</strong> $2,500 + Silver Certificate</li>
+        <li><strong>Track Bronze:</strong> $1,000 + Bronze Certificate</li>
+        <li><strong>Honorable Mention:</strong> Certificate of Recognition</li>
+        <li><strong>All Participants:</strong> Certificate of Participation</li>
+      </ul>
+    </div>
+
+    <div class="doc-block" id="sec-ethics">
+      <h3>Academic Ethics Policy</h3>
+      <p>ISRC maintains strict academic integrity standards. Violations may result in immediate disqualification and a ban from future editions.</p>
+      <ul>
+        <li>Plagiarism of any kind — including self-plagiarism — is strictly prohibited</li>
+        <li>AI-generated text exceeding 10% of the paper must be disclosed</li>
+        <li>Human subjects research must provide evidence of IRB/ethics board approval</li>
+        <li>Data fabrication or falsification results in permanent disqualification and institutional notification</li>
+        <li>All submissions are processed through iThenticate for plagiarism detection</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg><span id="toast-msg"></span></div>
+
+<script src="../js/app.js"></script>
+<script>
+  requireAuth();
+  renderNav('documents');
+
+  function goto(id, btn) {
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    document.querySelectorAll('.doc-nav-item').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
