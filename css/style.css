@@ -5,25 +5,25 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 :root {
-  --ink:      #0D0F1A;
-  --navy:     #1C2B5A;
-  --navy-mid: #243370;
-  --gold:     #B8882A;
-  --gold-l:   #D4A544;
-  --cream:    #F7F4EE;
-  --cream-d:  #EDE9DF;
-  --white:    #FFFFFF;
-  --text:     #2A2D3E;
-  --muted:    #6B7280;
-  --border:   #E2DDD4;
-  --shadow:   0 4px 24px rgba(13,15,26,.08);
-  --shadow-l: 0 2px 12px rgba(13,15,26,.06);
-  --r:        25px;        /* global border radius */
-  --r-sm:     14px;
-  --r-xs:     8px;
-  --nav-h:    68px;
-  --ff-h:     'DM Serif Display', serif;
-  --ff-b:     'DM Sans', sans-serif;
+   --ink: #0D0F1A;
+   --navy: #1C2B5A;
+   --navy-mid: #243370;
+   --gold:     #B8882A;
+   --gold-l:   #D4A544;
+   --cream:    #F7F4EE;
+   --cream-d:  #EDE9DF;
+   --white:    #FFFFFF;
+   --text:     #2A2D3E;
+   --muted:    #6B7280;
+   --border:   #E2DDD4;
+   --shadow:   0 4px 24px rgba(13,15,26,.08);
+   --shadow-l: 0 2px 12px rgba(13,15,26,.06);
+   --r:        25px;        /* global border radius */
+   --r-sm:     14px;
+   --r-xs:     8px;
+   --nav-h:    68px;
+   --ff-h:     'DM Serif Display', serif;
+   --ff-b:     'DM Sans', sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
