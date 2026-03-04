@@ -59,6 +59,16 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .btn-gold:hover { background: var(--gold-l); box-shadow: 0 8px 20px rgba(184,136,42,.28); }
 .btn-navy { background: var(--navy); color: var(--white); }
 .btn-navy:hover { background: var(--navy-mid); box-shadow: 0 8px 20px rgba(28,43,90,.25); }
+.btn-ghost-light { 
+   background: transparent; 
+   color: var(--white); 
+   border: 1.5px solid var(--white); /* Или var(--cream-d), если нужен менее яркий белый */
+}
+.btn-ghost-light:hover { 
+   background: var(--white); 
+   color: var(--ink); /* При наведении фон станет белым, а текст темным */
+   box-shadow: var(--shadow-l); 
+}
 .btn-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
 .btn-ghost:hover { border-color: var(--ink); box-shadow: var(--shadow-l); }
 .btn-sm { padding: 9px 20px; font-size: 13px; }
