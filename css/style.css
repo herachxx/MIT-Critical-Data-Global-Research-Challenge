@@ -279,6 +279,9 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .toast.show { transform: translateY(0); opacity: 1; pointer-events: auto; }
 .toast svg  { width: 15px; height: 15px; color: var(--gold); flex-shrink: 0; }
 
+.no-break {
+   white-space: nowrap;
+}
 /* ── Modal / Overlay ───────────────────────────────────── */
 /* Full-screen backdrop; .open toggles visibility */
 .overlay {
