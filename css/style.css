@@ -1,30 +1,19 @@
-/* ══════════════════════════════════════════════════════════
-   ISRC 2026 · Global Stylesheet
-   Single source of truth for all 13 pages.
-
-   Z-INDEX STACK (low → high):
-     .nav-float       200
-     .avatar-menu     300   (must exceed nav-float)
-     .overlay         500   (modal backdrop)
-     .toast          9999
-
-   PALETTE
-     --ink      #0D0F1A   near-black headings / hero bg
-     --navy     #1C2B5A   primary blue  (buttons, nav, banners)
-     --navy-mid #243370   navy hover state
-     --gold     #B8882A   warm gold  (CTAs, accents, cert)
-     --gold-l   #D4A544   light gold (hover, prize amounts)
-     --cream    #F7F4EE   off-white  (page bg, input bg)
-     --cream-d  #EDE9DF   darker cream (active nav, readonly)
-     --white    #FFFFFF   pure white (cards, modals)
-     --text     #2A2D3E   body text
-     --muted    #6B7280   labels, subtitles, placeholders
-     --border   #E2DDD4   all borders & dividers
-══════════════════════════════════════════════════════════ */
+/* PALETTE
+--ink      #0D0F1A   near-black headings / hero bg
+--navy     #1C2B5A   primary blue  (buttons, nav, banners)
+--navy-mid #243370   navy hover state
+--gold     #B8882A   warm gold  (CTAs, accents, cert)
+--gold-l   #D4A544   light gold (hover, prize amounts)
+--cream    #F7F4EE   off-white  (page bg, input bg)
+--cream-d  #EDE9DF   darker cream (active nav, readonly)
+--white    #FFFFFF   pure white (cards, modals)
+--text     #2A2D3E   body text
+--muted    #6B7280   labels, subtitles, placeholders
+--border   #E2DDD4   all borders & dividers */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-/* ── Design Tokens ─────────────────────────────────────── */
+/*Design Tokens*/
 :root {
  --ink:      #0D0F1A;
  --navy:     #1C2B5A;
@@ -47,7 +36,7 @@
  --ff-b:     'DM Sans', sans-serif;
 }
 
-/* ── Reset ─────────────────────────────────────────────── */
+/*Reset*/
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html  { scroll-behavior: smooth; font-size: 16px; }
 body  { font-family: var(--ff-b); background: var(--white); color: var(--text);
@@ -55,7 +44,7 @@ body  { font-family: var(--ff-b); background: var(--white); color: var(--text);
 a     { text-decoration: none; color: inherit; }
 img   { display: block; max-width: 100%; }
 
-/* ── Typography ────────────────────────────────────────── */
+/*Typography*/
 h1, h2, h3, h4 { font-family: var(--ff-h); line-height: 1.12; color: var(--ink); }
 h1 { font-size: clamp(40px, 6vw, 80px); }
 h2 { font-size: clamp(28px, 4vw, 50px); }
@@ -120,7 +109,7 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .field textarea { resize: vertical; min-height: 110px; }
 .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 
-/* Custom dropdown chevron — replaces browser default arrow */
+/*Custom dropdown — replaces browser default arrow*/
 .field select {
   cursor: pointer;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
@@ -177,12 +166,12 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 }
 .nav-login:hover { border-color: var(--navy); color: var(--navy); }
 
-/* ── Avatar Button & Dropdown ──────────────────────────── */
-/* Profile is accessed ONLY via this avatar — it is not a nav link */
-.nav-avatar-wrap { position: relative; }   /* anchor for absolute dropdown */
+/*Avatar Button & Dropdown*/
+/*Profile is accessed ONLY via this avatar — it is not a nav link*/
+.nav-avatar-wrap { position: relative; }   /*anchor for absolute dropdown*/
 
 .nav-avatar {
-  /* 36 × 36 circle showing user initials */
+  /*36×36 circle showing user initials*/
   width: 36px; height: 36px; border-radius: 50%;
   background: var(--navy); color: var(--white);
   font-family: var(--ff-b); font-size: 13px; font-weight: 700; letter-spacing: .02em;
@@ -196,18 +185,18 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
   box-shadow: 0 0 0 3px rgba(184,136,42,.15);
 }
 
-/* Dropdown panel — hidden until JS adds .open */
+/*Dropdown panel - hidden until JS adds .open*/
 .avatar-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 10px); /* 10px gap below the avatar */
-  right: 0;               /* right-aligned to avatar */
+  top: calc(100% + 10px); /*10px gap below the avatar*/
+  right: 0;               /*right-aligned to avatar*/
   min-width: 210px;
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: var(--r);
   box-shadow: 0 12px 40px rgba(13,15,26,.14);
-  z-index: 300;           /* above nav-float (200), below overlay (500) */
+  z-index: 300;           /*above nav-float (200), below overlay (500)*/
   overflow: hidden;
 }
 .avatar-menu.open { display: block; }
@@ -254,22 +243,22 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .section-head p         { font-size: 16px; color: var(--muted); margin-top: 14px; max-width: 520px; line-height: 1.7; }
 .section-head.center p  { margin-inline: auto; }
 
-/* ── Divider ───────────────────────────────────────────── */
+/*Divider*/
 .divider { width: 100%; height: 1px; background: var(--border); }
 
-/* ── Cards ─────────────────────────────────────────────── */
+/*Cards*/
 .card      { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
 .card-body { padding: 28px; }
 
-/* ── Tags / Badges ─────────────────────────────────────── */
+/*Tags/Badges*/
 .tag       { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: var(--r); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .tag-navy  { background: #EEF1F9; color: var(--navy); }
 .tag-gold  { background: #FBF4E8; color: var(--gold); }
 .tag-green { background: #ECFDF5; color: #166534; }
 .tag-red   { background: #FEF2F2; color: #B91C1C; }
 
-/* ── Toast Notification ────────────────────────────────── */
-/* Starts off-screen; JS adds .show to animate it in */
+/*Toast Notification*/
+/*Starts off-screen; JS adds .show to animate it in*/
 .toast {
   position: fixed; bottom: 28px; right: 28px; z-index: 9999;
   background: var(--ink); color: var(--white);
@@ -287,8 +276,8 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .no-break {
    white-space: nowrap;
 }
-/* ── Modal / Overlay ───────────────────────────────────── */
-/* Full-screen backdrop; .open toggles visibility */
+/*Modal/Overlay*/
+/*Full-screen backdrop; .open toggles visibility*/
 .overlay {
   position: fixed; inset: 0; background: rgba(13,15,26,.55);
   z-index: 500; display: none; align-items: center; justify-content: center;
@@ -309,8 +298,8 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 }
 .modal-x:hover { background: var(--cream-d); color: var(--ink); }
 
-/* ── FAQ Accordion ─────────────────────────────────────── */
-/* max-height animation: 0 → 240px. Cannot animate to "auto". */
+/*FAQ Accordion*/
+/*max-height animation: 0 → 240px. Cannot animate to "auto"*/
 .faq-item { border: 1.5px solid var(--border); border-radius: var(--r-sm); margin-bottom: 10px; background: var(--white); overflow: hidden; }
 .faq-q    {
   width: 100%; padding: 18px 22px; background: none; border: none;
@@ -325,12 +314,12 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .faq-item.open .faq-a { max-height: 240px; }
 .faq-a-inner          { padding: 0 22px 18px; font-size: 14px; color: var(--muted); line-height: 1.8; }
 
-/* ── Grid Utilities ────────────────────────────────────── */
+/*Grid utilities*/
 .g2 { display: grid; grid-template-columns: 1fr 1fr;         gap: 20px; }
 .g3 { display: grid; grid-template-columns: repeat(3, 1fr);  gap: 20px; }
 .g4 { display: grid; grid-template-columns: repeat(4, 1fr);  gap: 20px; }
 
-/* ── Responsive Breakpoints ────────────────────────────── */
+/*Responsive Breakpoints*/
 @media (max-width: 900px) {
   .g3, .g4 { grid-template-columns: 1fr 1fr; }
 }
