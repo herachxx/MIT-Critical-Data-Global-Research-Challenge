@@ -184,9 +184,11 @@ window.addEventListener('scroll', () => {
    const currentScrollY = window.scrollY;
    /*if scrolled down 60px from the beginning of the page*/
    if (currentScrollY > lastScrollY && currentScrollY > 60) {
+      // Скроллим вниз: ДОБАВЛЯЕМ класс для скрытия
       nav.classList.add('nav-hidden');
    } else {
       /*if scrolling up*/
+      // Скроллим вверх: УБИРАЕМ класс, чтобы показать
       nav.classList.remove('nav-hidden');
    }
    lastScrollY = currentScrollY;
