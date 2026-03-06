@@ -11,3 +11,31 @@ A global research competition recognizing outstanding student scholarship.
 Used tools:
 
 Contact information
+
+
+International-Scholars-Research-Competition/
+│
+├── index.html                    ← Homepage
+│
+├── css/
+│   └── style.css                 ← Global styles
+│
+├── js/
+│   └── app.js                    ← All JavaScript functions
+│
+├── pages/                        ← User pages (after login)
+│   ├── login.html
+│   ├── register.html
+│   ├── dashboard.html
+│   ├── submit.html
+│   ├── submissions.html
+│   ├── payment.html
+│   ├── profile.html
+│   ├── certificate.html
+│   └── competition-reg.html
+│
+├── icon.svg                      ← Logo/favicon
+│
+└── README.md                     ← Project info
+
+
