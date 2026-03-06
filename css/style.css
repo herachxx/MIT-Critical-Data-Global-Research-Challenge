@@ -249,6 +249,30 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 .card      { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); overflow: hidden; }
 .card-body { padding: 28px; }
 
+.card-dark {
+   background: #121421;
+   border: 1.5px solid rgb(255, 255, 255, 0.05);
+   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   position: relative;
+   cursor: pointer;
+}
+.card-dark h3; /*Changing the color of the header and text inside the dark box*/
+.card-dark h4 {
+   color: var(--white);
+   transition: color 0.3s ease;
+}
+.card-dark p {
+   color: rgba(255, 255, 255, 0.6);
+}
+.card-dark:hover {
+   transform: translateY(-8px);
+   background: #1a1d2e;
+   border-color: var(--gold);
+
+   box-shadow: 0 10px 40px rgba(184, 136, 42, 0.25),
+               0 0 20px rgba(184, 136, 42, 0.1);
+}
+
 /*Tags/Badges*/
 .tag       { display: inline-flex; align-items: center; gap: 5px; padding: 4px 12px; border-radius: var(--r); font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 .tag-navy  { background: #EEF1F9; color: var(--navy); }
