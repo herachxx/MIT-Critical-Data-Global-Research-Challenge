@@ -69,21 +69,32 @@
 
 /*Categories*/
 .cat-card {
-  background: var(--white); border: 1.5px solid var(--border);
+  background: #121421; border: 1.5px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--r); padding: 28px;
-  transition: border-color .2s, box-shadow .2s;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   position: relative;
+  cursor: pointer;
 }
-.cat-card:hover { border-color: var(--navy); box-shadow: var(--shadow); }
+.cat-card:hover { 
+  border-color: var(--gold-l);
+  box-shadow: 0 0 30px rgba(212, 165, 68, 0.4), 
+              0 0 50px rgba(212, 165, 68, 0.2),
+              inset 0 0 20px rgba(212, 165, 68, 0.05);
+  transform: translateY(-4px);
+}
 .cat-icon {
   width: 48px; height: 48px; border-radius: var(--r-sm);
-  background: var(--cream); display: flex; align-items: center; justify-content: center;
+  background: rgba(212, 165, 68, 0.1); display: flex; align-items: center; justify-content: center;
   margin-bottom: 18px;
+  transition: background-color 0.3s ease;
 }
-.cat-icon svg { width: 24px; height: 24px; color: var(--navy); }
-.cat-card h3 { font-size: 20px; margin-bottom: 8px; }
-.cat-card p  { font-size: 13px; color: var(--muted); line-height: 1.7; }
-.cat-count { position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 600; color: var(--muted); }
+.cat-card:hover .cat-icon {
+  background: rgba(212, 165, 68, 0.2);
+}
+.cat-icon svg { width: 24px; height: 24px; color: var(--gold-l); }
+.cat-card h3 { font-size: 20px; margin-bottom: 8px; color: var(--white); }
+.cat-card p  { font-size: 13px; color: rgba(255, 255, 255, 0.6); line-height: 1.7; }
+.cat-count { position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 600; color: rgba(255, 255, 255, 0.4); }
 
 /*Timeline*/
 .timeline-wrap { max-width: 680px; margin: 0 auto; }
@@ -217,7 +228,7 @@ footer a:hover { color: var(--white); }
       <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
       <span class="cat-count">387 entries</span>
       <h3>Physical Sciences</h3>
-      <p>Physics, chemistry, astronomy — from quantum mechanics to nanoscale phenomena.</p>
+      <p>Physics, chemistry, astronomy - from quantum mechanics to nanoscale phenomena.</p>
     </div>
     <div class="cat-card">
       <div class="cat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
