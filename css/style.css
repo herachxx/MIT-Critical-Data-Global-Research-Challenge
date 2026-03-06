@@ -251,13 +251,12 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
 
 .card-dark {
    background: #121421;
-   border: 1.5px solid rgb(255, 255, 255, 0.05);
-   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+   border: 1.5px solid rgba(255, 255, 255, 0.1);
+   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
    position: relative;
    cursor: pointer;
 }
-.card-dark h3; /*Changing the color of the header and text inside the dark box*/
-.card-dark h4 {
+.card-dark h3, .card-dark h4 {
    color: var(--white);
    transition: color 0.3s ease;
 }
@@ -265,12 +264,12 @@ p  { font-family: var(--ff-b); line-height: 1.75; color: var(--text); }
    color: rgba(255, 255, 255, 0.6);
 }
 .card-dark:hover {
-   transform: translateY(-8px);
+   border-color: var(--gold-l);
+   transform: translateY(-4px);
    background: #1a1d2e;
-   border-color: var(--gold);
-
-   box-shadow: 0 10px 40px rgba(184, 136, 42, 0.25),
-               0 0 20px rgba(184, 136, 42, 0.1);
+   box-shadow: 0 0 30px rgba(212, 165, 68, 0.4), 
+               0 0 50px rgba(212, 165, 68, 0.2),
+               inset 0 0 20px rgba(212, 165, 68, 0.05);
 }
 
 /*Tags/Badges*/
