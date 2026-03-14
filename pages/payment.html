@@ -48,10 +48,14 @@ body { background: var(--cream); }
 .price-feats li svg { width: 14px; height: 14px; flex-shrink: 0; color: #28a06a; }
 .price-feats li.no svg { color: var(--border); }
 .price-feats li.no { color: var(--muted); }
-.btn-pick { width: 100%; padding: 11px; border-radius: var(--r); font-family: var(--ff-b); font-size: 13px; font-weight: 600; letter-spacing: .04em; cursor: pointer; border: 1.5px solid var(--navy); background: transparent; color: var(--navy); transition: all .2s; }
-.btn-pick:hover { background: var(--navy); color: var(--white); }
-.price-card.featured .btn-pick { background: var(--gold); color: var(--white); border-color: var(--gold); }
-.price-card.featured .btn-pick:hover { background: var(--gold-l); }
+.btn-pick {
+  width: 100%; padding: 11px; border-radius: var(--r); font-family: var(--ff-b); font-size: 13px; font-weight: 600; letter-spacing: .04em; cursor: pointer;
+  border: 1.5px solid rgba(28, 43, 90, 0.4); background: rgba(255, 255, 255, 0.5); color: var(--navy);
+  transition: all .2s; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.btn-pick:hover { background: rgba(28, 43, 90, 0.75); color: var(--white); border-color: rgba(28, 43, 90, 0.6); }
+.price-card.featured .btn-pick { background: rgba(184, 136, 42, 0.75); color: var(--white); border-color: rgba(184, 136, 42, 0.5); }
+.price-card.featured .btn-pick:hover { background: rgba(212, 165, 68, 0.9); }
 
 /* Info cards */
 .info-card { background: var(--white); border: 1.5px solid var(--border); border-radius: var(--r); padding: 24px; }
@@ -63,8 +67,12 @@ body { background: var(--cream); }
 .card-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
 .secure { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); margin: 10px 0 0; }
 .secure svg { width: 13px; height: 13px; color: #28a06a; }
-.btn-pay { width:100%; padding:13px; margin-top:14px; border:none; border-radius:var(--r); background:var(--navy); color:var(--white); font-family:var(--ff-b); font-size:14px; font-weight:600; cursor:pointer; transition:all .2s; }
-.btn-pay:hover { background: var(--navy-mid); }
+.btn-pay {
+  width:100%; padding:13px; margin-top:14px; border:1px solid rgba(255,255,255,.2); border-radius:var(--r);
+  background: rgba(28, 43, 90, 0.75); color:var(--white); font-family:var(--ff-b); font-size:14px; font-weight:600; cursor:pointer; transition:all .2s;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+}
+.btn-pay:hover { background: rgba(36, 51, 112, 0.9); }
 .success-block { text-align:center; padding:16px 0; }
 .success-block .icon { font-size:52px; margin-bottom:16px; }
 .success-block h4 { font-size:24px; margin-bottom:8px; }
