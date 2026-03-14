@@ -1,5 +1,5 @@
-# International-Scholars-Research-Competition
-A global research competition recognizing outstanding student scholarship.
+# MIT Critical Data Global Research Challenge
+- a global research competition recognizing outstanding student scholarship.
 
 **Prototype version's structure - 2 March 2026**  
 <img width="424" height="178" alt="image" src="https://github.com/user-attachments/assets/41a7150d-f328-4e87-8705-e2cf08e4c68a" />
