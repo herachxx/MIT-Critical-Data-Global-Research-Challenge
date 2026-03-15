@@ -1,363 +1,408 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="ISRC 2026 — International Scholars Research Competition. Join 2,400+ scholars competing for $120,000 in prizes."/>
-  <title>ISRC 2026 — International Scholars Research Competition</title>
-  <link rel="icon" href="icon.svg" type="image/svg+xml"/>
-  <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="css/styles.css"/>
+  <title>MIT Critical Data Global Research Challenge</title>
+  <link rel="icon" type="image/png" href="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <div id="nav-slot"></div>
 
-  <section class="hero">
-    <div class="hero-dots"></div>
-    <div class="hero-inner">
-      <div class="hero-badge">
-        <div class="hero-badge-dot"></div>
-        Now Accepting Submissions
+<!-- NAV -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="submit.html">Submit</a></li>
+      <li><a href="login.html" class="nav-login-btn">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-badge">NSRI × Synthica Presents</div>
+    <h1 class="hero-title">MIT Critical Data<br/><em>Global Research</em><br/>Challenge</h1>
+    <p class="hero-subtitle">A premier international research competition uniting student scientists, engineers, and innovators to advance humanity through data-driven discovery.</p>
+    <div class="hero-stats">
+      <div class="stat-pill">
+        <span class="stat-num">$10,000+</span>
+        <span class="stat-label">Student Awards</span>
       </div>
-      <h1><span class="hero-line1">International Scholars</span><br><em class="hero-line2">Research Competition</em></h1>
-      <p class="hero-sub">
-        Join 2,400+ scholars from 48+ countries competing for $120,000 in prizes.
-        Early bird registration closes March 1st.
-      </p>
-      <div class="hero-btns">
-        <a href="pages/register.html" class="btn btn-gold">Create Your Account</a>
-        <a href="pages/login.html" class="btn btn-ghost-light">I Already Have an Account</a>
+      <div class="stat-pill">
+        <span class="stat-num">300+</span>
+        <span class="stat-label">Recognized</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">5</span>
+        <span class="stat-label">Categories</span>
+      </div>
+      <div class="stat-pill">
+        <span class="stat-num">Global</span>
+        <span class="stat-label">Competition</span>
       </div>
     </div>
-    <div class="hero-scroll">
-      <span>Scroll to explore</span>
-      <div class="hero-scroll-line"></div>
+    <div class="hero-actions">
+      <a href="register.html" class="btn-primary">Sign Up & Submit Research</a>
+      <a href="#about" class="btn-ghost">Learn More</a>
     </div>
-  </section>
+  </div>
+  <div class="hero-scroll-hint">
+    <span>Scroll to explore</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
 
-  <section class="stats-strip">
-    <div class="stats-inner">
-      <div>
-        <span class="stat-val">2,400+</span>
-        <span class="stat-lbl">Registered Scholars</span>
+<!-- PRIZE BANNER -->
+<section class="prize-banner">
+  <div class="container">
+    <div class="prize-banner-label">$13,000+ Total Funding · $10,000 Student Awards</div>
+    <h2 class="prize-banner-title">Awards &amp; Recognition</h2>
+
+    <!-- Global Grand Award -->
+    <div class="award-block">
+      <div class="award-block-header">
+        <span class="award-block-icon">🌐</span>
+        <div>
+          <div class="award-block-name">Global Grand Award</div>
+          <div class="award-block-sub">Top 3 papers globally</div>
+        </div>
       </div>
-      <div>
-        <span class="stat-val">48</span>
-        <span class="stat-lbl">Countries</span>
-      </div>
-      <div>
-        <span class="stat-val">$120K</span>
-        <span class="stat-lbl">Total Prize Pool</span>
+      <div class="prize-grid">
+        <div class="prize-card gold">
+          <div class="prize-rank">🥇 1st Place</div>
+          <div class="prize-amount">$1,500</div>
+          <div class="prize-desc">Global Grand Award</div>
+        </div>
+        <div class="prize-card silver">
+          <div class="prize-rank">🥈 2nd Place</div>
+          <div class="prize-amount">$500</div>
+          <div class="prize-desc">Global Grand Award</div>
+        </div>
+        <div class="prize-card bronze">
+          <div class="prize-rank">🥉 3rd Place</div>
+          <div class="prize-amount">$250</div>
+          <div class="prize-desc">Global Grand Award</div>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section class="section" id="about">
+    <!-- Best Paper Award -->
+    <div class="award-block">
+      <div class="award-block-header">
+        <span class="award-block-icon">📄</span>
+        <div>
+          <div class="award-block-name">Best Paper Award</div>
+          <div class="award-block-sub">Awarded per category — 1st, 2nd &amp; 3rd Place in each of the 5 categories</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recognition Tiers -->
+    <div class="recognition-tiers">
+      <div class="tier-card tier-finalist">
+        <div class="tier-icon">🎓</div>
+        <div class="tier-name">Global Finalist</div>
+        <div class="tier-count">Top 40 Researchers</div>
+        <div class="tier-desc">Selected after final judging by PhD researchers, Associate Professors, and Professors.</div>
+        <ul class="tier-perks">
+          <li>✦ Official Global Finalist Recognition</li>
+          <li>✦ Publish research on the NSRI Website</li>
+          <li>✦ Featured on NSRI Research Showcase</li>
+        </ul>
+      </div>
+      <div class="tier-card tier-semi">
+        <div class="tier-icon">🏅</div>
+        <div class="tier-name">Semi-Finalist</div>
+        <div class="tier-count">Top 100 Researchers</div>
+        <div class="tier-desc">Selected after Round 2 review. Official semi-finalist recognition and certificate.</div>
+        <ul class="tier-perks">
+          <li>✦ Official Semi-Finalist Certificate</li>
+          <li>✦ NSRI Recognition Letter</li>
+        </ul>
+      </div>
+      <div class="tier-card tier-distinction">
+        <div class="tier-icon">⭐</div>
+        <div class="tier-name">Research Distinction Award</div>
+        <div class="tier-count">Top 300 Researchers</div>
+        <div class="tier-desc">Awarded after the open submission round in recognition of outstanding research submissions.</div>
+        <ul class="tier-perks">
+          <li>✦ Research Distinction Certificate</li>
+          <li>✦ Competition Recognition</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="prize-note">Judged by PhD researchers, Associate Professors &amp; Professors · Winners announced June 13</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-label">About the Competition</div>
+    <h2 class="section-title">Where Student Research<br/>Meets Global Impact</h2>
     <div class="about-grid">
-      <div class="about-visual">
-        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="20" y="20" width="60" height="60" stroke="currentColor" stroke-width="2"/>
-          <circle cx="50" cy="40" r="8" fill="currentColor"/>
-          <path d="M35 60 L50 70 L65 60" stroke="currentColor" stroke-width="2" fill="none"/>
-        </svg>
-      </div>
-      <div class="about-content">
-        <div class="section-head">
-          <span class="eyebrow">About ISRC</span>
-          <h2>A Global Platform for <em>Rising Minds</em></h2>
-        </div>
-        <p>
-          The International Scholars Research Competition celebrates young researchers pushing the boundaries
-          of human knowledge. We provide a prestigious platform to showcase rigorous, original research across
-          multiple disciplines.
-        </p>
-        <p>
-          Whether your research focuses on AI, biology, physics, medicine, or social sciences, ISRC 2026
-          welcomes submissions from students worldwide. Compete fairly, gain recognition, and potentially
-          see your work published in leading academic journals.
-        </p>
-        <div class="about-pills">
-          <div class="pill">Double-blind peer review</div>
-          <div class="pill">International jury</div>
-          <div class="pill">Journal publication opportunities</div>
-          <div class="pill">Networking events</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="partners">
-    <div class="section-head center">
-      <span class="eyebrow">Partners</span>
-      <h2>Our <em>Partners</em> &amp; Sponsors</h2>
-    </div>
-    <div class="partners-rows">
-      <div class="partners-row">
-        <span class="partners-label">Head Organizers</span>
-        <div class="partners-logos">
-          <div class="partner-box">Synthica</div>
-          <div class="partner-box">NSRI</div>
+      <div class="about-text">
+        <p>The MIT Critical Data Global Research Challenge is a continental research competition hosted by the <strong>National Student Researchers Institute (NSRI)</strong> in partnership with <strong>Synthica</strong>. This competition invites students from all disciplines to submit original research papers for review by leading professors and industry experts.</p>
+        <p>Modeled after elite competitions like <strong>iGO, KSEF, iSEF, Regeneron,</strong> and <strong>YISF</strong> — our challenge provides students a prestigious platform to present groundbreaking research, earn recognition, and compete for over <strong>$10,000 in student awards</strong>.</p>
+        <div class="about-highlights">
+          <div class="highlight-item">
+            <span class="highlight-icon">📄</span>
+            <div>
+              <strong>Online Paper Submission</strong>
+              <span>All academic fields accepted</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🔍</span>
+            <div>
+              <strong>Blind Peer Review</strong>
+              <span>2 expert reviewers per paper</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">🎤</span>
+            <div>
+              <strong>Finals Presentation</strong>
+              <span>Oral Q&A with professor judges</span>
+            </div>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-icon">👥</span>
+            <div>
+              <strong>Team Size</strong>
+              <span>Up to 3 members per team</span>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="partners-row">
-        <span class="partners-label">Partners</span>
-        <div class="partners-logos">
-          <div class="partner-box">Stanford</div>
-          <div class="partner-box">MIT</div>
+      <div class="about-fees-card">
+        <h3>Entry Fees</h3>
+        <div class="fee-item">
+          <span>Registration + 1 Submission</span>
+          <strong>$30</strong>
         </div>
-      </div>
-      <div class="partners-row">
-        <span class="partners-label">Sponsors</span>
-        <div class="partners-logos">
-          <div class="partner-box">HackClub</div>
-          <div class="partner-box">ColdMatch</div>
-          <div class="partner-box">CrackD</div>
+        <div class="fee-divider"></div>
+        <div class="fee-item">
+          <span>Each Additional Project</span>
+          <strong>+$10</strong>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="categories">
-    <div class="section-head center">
-      <span class="eyebrow">Research Tracks</span>
-      <h2>Explore <em>8 Categories</em></h2>
-      <p>Submit your research in any of our featured disciplines and compete with peers in your field.</p>
-    </div>
-    <div class="g4">
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2v20M2 12h20M7.07 7.07a8 8 0 0 1 11.31 11.31L7.07 7.07z"/>
-          </svg>
-        </div>
-        <h3>AI & Machine Learning</h3>
-        <p>Deep learning, neural networks, natural language processing, and autonomous systems.</p>
-        <span class="cat-count">287 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-          </svg>
-        </div>
-        <h3>Biology & Genetics</h3>
-        <p>Molecular biology, genomics, cellular research, and biomedical innovations.</p>
-        <span class="cat-count">156 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 3v18M3 12h18M6 6l12 12M18 6L6 18"/>
-          </svg>
-        </div>
-        <h3>Physics & Quantum</h3>
-        <p>Quantum computing, particle physics, astrophysics, and theoretical breakthroughs.</p>
-        <span class="cat-count">143 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M9 12L11 14L15 10M12 2.5a4.5 4.5 0 0 0-4.5 4.5v7a4.5 4.5 0 0 0 4.5 4.5 4.5 4.5 0 0 0 4.5-4.5v-7a4.5 4.5 0 0 0-4.5-4.5z"/>
-          </svg>
-        </div>
-        <h3>Medicine & Neuroscience</h3>
-        <p>Medical breakthroughs, brain research, clinical trials, and health innovations.</p>
-        <span class="cat-count">198 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 3h18v18H3z"/><path d="M3 9h18M9 3v18"/>
-          </svg>
-        </div>
-        <h3>Chemistry & Materials</h3>
-        <p>Chemical processes, material science, synthesis, and industrial applications.</p>
-        <span class="cat-count">124 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 2v20M2 12h20" stroke-width="1.5"/><circle cx="12" cy="12" r="8"/>
-          </svg>
-        </div>
-        <h3>Economics & Finance</h3>
-        <p>Economic models, fintech, market analysis, and policy research.</p>
-        <span class="cat-count">167 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12c0-1 1-3 9-3s9 2 9 3-1 3-9 3-9-2-9-3z"/><path d="M12 6v12M3 12v6M21 12v6"/>
-          </svg>
-        </div>
-        <h3>Environmental Science</h3>
-        <p>Climate research, sustainability, conservation, and ecosystem studies.</p>
-        <span class="cat-count">89 submissions</span>
-      </div>
-      <div class="cat-card">
-        <div class="cat-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-          </svg>
-        </div>
-        <h3>Social Sciences</h3>
-        <p>Education, psychology, sociology, and cultural research.</p>
-        <span class="cat-count">156 submissions</span>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <section class="section" id="timeline">
-    <div class="section-head center">
-      <span class="eyebrow">Key Dates</span>
-      <h2>Competition <em>Timeline</em></h2>
-    </div>
-    <div class="timeline-wrap">
-      <div class="tl-item">
-        <div class="tl-dot" style="background:#28a06a">✓</div>
-        <div class="tl-body">
-          <div class="tl-date">Jan 15, 2026</div>
-          <div class="tl-title">Registration Opens</div>
-          <div class="tl-desc">Create your account and begin the registration process. Early bird pricing available until March 1.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot" style="background:#28a06a">✓</div>
-        <div class="tl-body">
-          <div class="tl-date">Mar 1, 2026</div>
-          <div class="tl-title">Abstract Deadline</div>
-          <div class="tl-desc">Submit your 500–800 word structured abstract. Acceptance notifications sent within 4 weeks.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot" style="background:var(--gold)">3</div>
-        <div class="tl-body">
-          <div class="tl-date">Jun 15, 2026</div>
-          <div class="tl-title">Full Paper Submission</div>
-          <div class="tl-desc">Submit your complete research paper (max 12,000 words) with full data and methodology sections.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot" style="background:var(--border);color:var(--muted)">4</div>
-        <div class="tl-body">
-          <div class="tl-date">Aug 30, 2026</div>
-          <div class="tl-title">Finalists Announced</div>
-          <div class="tl-desc">Top 20% of submissions per track advance to the international final round.</div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-dot" style="background:var(--border);color:var(--muted)">5</div>
-        <div class="tl-body">
-          <div class="tl-date">Oct 12–16, 2026</div>
-          <div class="tl-title">International Finals — Geneva</div>
-          <div class="tl-desc">Live presentations before an international jury of renowned academics and industry leaders. Awards ceremony on October 16.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <div class="prizes-bg">
-    <div class="section">
-      <div class="section-head center" style="color:white">
-        <span class="eyebrow">Awards</span>
-        <h2 style="color:var(--white)">Prizes <em style="color:var(--gold-l)">Worth Competing For</em></h2>
-        <p style="color:rgba(255,255,255,.5)">Recognition, funding, and publication opportunities await the best research.</p>
-      </div>
-      <div class="g4">
-        <div class="prize-card">
-          <span class="prize-medal">🏆</span>
-          <div class="prize-tier">Grand Prix</div>
-          <div class="prize-amount">$15,000</div>
-          <div class="prize-desc">Gold Medal + Journal Publication</div>
-        </div>
-        <div class="prize-card">
-          <span class="prize-medal">🥇</span>
-          <div class="prize-tier">Track Gold</div>
-          <div class="prize-amount">$5,000</div>
-          <div class="prize-desc">Per track + Publication Recommendation</div>
-        </div>
-        <div class="prize-card">
-          <span class="prize-medal">🥈</span>
-          <div class="prize-tier">Track Silver</div>
-          <div class="prize-amount">$2,500</div>
-          <div class="prize-desc">Per track + Silver Certificate</div>
-        </div>
-        <div class="prize-card">
-          <span class="prize-medal">🥉</span>
-          <div class="prize-tier">Track Bronze</div>
-          <div class="prize-amount">$1,000</div>
-          <div class="prize-desc">Per track + Bronze Certificate</div>
-        </div>
-      </div>
-      <p style="text-align:center;color:rgba(255,255,255,.35);font-size:13px;margin-top:28px">
-        All registered participants receive an official Certificate of Participation.
-      </p>
-    </div>
-  </div>
-
-  <section class="section-sm section" id="faq" style="max-width:760px">
-    <div class="section-head center">
-      <span class="eyebrow">Frequently Asked Questions</span>
-      <h2>FAQ</h2>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">
-        Who is eligible to participate?
-        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">ISRC 2026 is open to undergraduate students (year 2+), master's students, and first/second-year PhD students at accredited universities worldwide. There is no age restriction.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">
-        Can I submit as part of a team?
-        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Yes — teams of up to 4 students are permitted. Each member must register individually. The lead author submits on behalf of the team; all members receive certificates and prize splits.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">
-        What language must submissions be in?
-        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">All submissions must be in English. Accepted finalists may request a translation voucher (up to $200) if English is their second language.</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">
-        How are papers judged?
-        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">Double-blind peer review by senior academics and industry experts. Criteria: Originality (30%), Methodology (25%), Significance (25%), Clarity & Presentation (20%).</div></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q" onclick="faq(this)">
-        What happens after I register?
-        <svg class="faq-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <div class="faq-a"><div class="faq-a-inner">After creating an account and paying your registration fee, you'll gain immediate access to the submission portal where you can upload your abstract and later your full paper.</div></div>
-    </div>
-  </section>
-
-  <div style="padding:0 0 80px">
-    <div class="cta-banner">
-      <h2>Ready to Make Your Mark?</h2>
-      <p>Join 2,400 scholars from 48+ countries competing for $120,000 in prizes and publication opportunities.</p>
-      <div class="hero-btns">
-        <a href="pages/register.html" class="btn btn-gold">Create Your Account</a>
-        <a href="pages/login.html" class="btn btn-ghost-light" style="color:white;border-color:rgba(255,255,255,.3)">I Already Have an Account</a>
+        <div class="fee-note">All fees go toward prize operations and award distribution</div>
+        <a href="register.html" class="btn-primary full-width">Register Now</a>
       </div>
     </div>
   </div>
+</section>
 
-  <footer>
-    <p><strong>ISRC 2026</strong> — International Scholars Research Competition</p>
-    <p style="margin-top:6px">Geneva, Switzerland · October 12–16, 2026 · <a href="mailto:contact@isrc2026.com">contact@isrc2026.com</a></p>
-  </footer>
+<!-- CATEGORIES -->
+<section class="section section-alt" id="categories">
+  <div class="container">
+    <div class="section-label">Research Areas</div>
+    <h2 class="section-title">Competition Categories</h2>
+    <div class="categories-grid">
+      <div class="category-card">
+        <div class="cat-icon">🧬</div>
+        <h3>Health & Life Sciences</h3>
+        <p>Biology, medicine, neuroscience, public health, biotechnology, and biomedical engineering research.</p>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon">⚙️</div>
+        <h3>Engineering & Technology</h3>
+        <p>Computer science, AI/ML, electrical, mechanical, and software engineering innovations.</p>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon">⚗️</div>
+        <h3>Physical & Chemical Sciences</h3>
+        <p>Physics, chemistry, materials science, nanotechnology, and quantum research.</p>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon">🌍</div>
+        <h3>Environmental & Earth Sciences</h3>
+        <p>Climate science, ecology, geology, sustainability, and environmental policy research.</p>
+      </div>
+      <div class="category-card">
+        <div class="cat-icon">📊</div>
+        <h3>Social Sciences, Humanities & Policy</h3>
+        <p>Economics, sociology, political science, psychology, history, and public policy.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="js/app.js"></script>
-  <script src="js/scripts.js"></script>
+<!-- TIMELINE -->
+<section class="section" id="timeline">
+  <div class="container">
+    <div class="section-label">Important Dates</div>
+    <h2 class="section-title">Competition Timeline</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May 30</div>
+        <div class="timeline-content">
+          <h3>Paper Submission Deadline</h3>
+          <p>All fields accepted. Online submission portal closes at 11:59 PM EST.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">May 31 – Jun 6</div>
+        <div class="timeline-content">
+          <h3>Blind Review Period</h3>
+          <p>2 expert reviewers per paper. Top 300 receive Research Distinction Award. Top 100 Semi-Finalists shortlisted.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jun 7 – Jun 10</div>
+        <div class="timeline-content">
+          <h3>Finalist Confirmation</h3>
+          <p>Top 40 Global Finalists confirmed. Presentation preparation, travel and logistics coordination.</p>
+        </div>
+      </div>
+      <div class="timeline-item active">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">June 13</div>
+        <div class="timeline-content">
+          <h3>Finals Day 🏆</h3>
+          <p>Oral presentation + Q&A with professor judges. Winners announced same day.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="section section-alt" id="partners">
+  <div class="container">
+    <div class="section-label">Program Partners</div>
+    <h2 class="section-title">Supported By</h2>
+    <div class="partners-grid">
+      <div class="partner-logo-wrap">
+        <img src="assets/MIT-university-logo.png" alt="MIT University"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/MIT-critical-data-logo.png" alt="MIT Critical Data"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/Stanford-university-logo.png" alt="Stanford University"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/NSRI_logo.png" alt="NSRI"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/synthica-logo.jpg" alt="Synthica"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/HackClub-logo.jpg" alt="Hack Club"/>
+      </div>
+      <div class="partner-logo-wrap">
+        <img src="assets/ColdMatch-logo.jpg" alt="ColdMatch"/>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER COMPETITIONS -->
+<section class="section" id="peer-competitions">
+  <div class="container">
+    <div class="section-label">Peer Competitions</div>
+    <h2 class="section-title">In Good Company</h2>
+    <p style="color:var(--gray-2); max-width:600px; margin-bottom:48px; font-size:1rem;">The MIT Critical Data Global Research Challenge is modeled after and recognized alongside the world's most prestigious student research competitions.</p>
+    <div class="peer-comps-grid">
+      <div class="peer-comp-card"><span class="peer-comp-name">iGO</span><span class="peer-comp-label">International Competition</span></div>
+      <div class="peer-comp-card"><span class="peer-comp-name">KSEF</span><span class="peer-comp-label">Kentucky Science &amp; Engineering Fair</span></div>
+      <div class="peer-comp-card"><span class="peer-comp-name">iSEF</span><span class="peer-comp-label">International Science &amp; Engineering Fair</span></div>
+      <div class="peer-comp-card"><span class="peer-comp-name">Regeneron</span><span class="peer-comp-label">Science Talent Search</span></div>
+      <div class="peer-comp-card"><span class="peer-comp-name">YISF</span><span class="peer-comp-label">Youth International Science Fair</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <div class="container">
+    <div class="section-label">Questions</div>
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question">Who can participate?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>The competition is open to all student researchers globally. Teams of up to 3 members are allowed. All academic fields and disciplines are welcome.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What is the entry fee?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>The entry fee is <strong>$30</strong> for registration and one project submission. Each additional project submitted costs an extra <strong>$10</strong>.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I submit multiple projects?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>Yes! You may submit multiple projects. Your initial $30 covers your first submission. Each additional project is $10.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">How are papers reviewed?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>All submissions go through a blind review process with 2 expert reviewers per paper. Top 300 receive the Research Distinction Award, top 100 advance as Semi-Finalists, and the top 40 become Global Finalists who present orally on Finals Day.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">What format should my paper be in?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>Papers should be submitted as PDF documents following standard academic research format. Detailed guidelines will be provided upon registration.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Where are the finals held?<span class="faq-arrow">↓</span></button>
+        <div class="faq-answer"><p>Finals will be held on June 13. Location details and travel coordination information will be provided to confirmed finalists during June 7–10.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="cta-title">Ready to Make Your Mark?</h2>
+    <p class="cta-sub">Join researchers from around the world. Submit your paper, compete for over $10,000 in student awards, and earn global recognition.</p>
+    <a href="register.html" class="btn-primary btn-large">Start Your Application →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="footer-logo"/>
+        <span>MIT Critical Data<br/>Global Research Challenge</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#categories">Categories</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#faq">FAQ</a>
+        <a href="submit.html">Submit</a>
+        <a href="login.html">Login</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 MIT Critical Data Global Research Challenge · NSRI × Synthica · All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
 </body>
 </html>
