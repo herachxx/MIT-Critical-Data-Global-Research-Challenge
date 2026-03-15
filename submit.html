@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Submit Research · MIT Critical Data Global Research Challenge</title>
+  <link rel="icon" type="image/png" href="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="nav-logo-img"/>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#categories">Categories</a></li>
+      <li><a href="index.html#timeline">Timeline</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="submit.html" class="active">Submit</a></li>
+      <li><a href="login.html" class="nav-login-btn">Login</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="index.html#about">About</a>
+  <a href="index.html#categories">Categories</a>
+  <a href="index.html#timeline">Timeline</a>
+  <a href="index.html#faq">FAQ</a>
+  <a href="submit.html">Submit</a>
+  <a href="login.html" class="mobile-login">Login</a>
+</div>
+
+<!-- LOGGED IN: show submission form -->
+<div id="loggedInView" style="display:none;">
+  <div class="submit-page">
+    <div class="container">
+      <div class="submit-card">
+        <h1>Submit Your Research</h1>
+        <p class="subtitle">Add a new project to your competition entry. Each additional project costs $10.</p>
+
+        <div id="dashSubmitSuccess" class="alert alert-success" style="display:none;">
+          <span>✅</span> Project submitted successfully! <a href="dashboard.html" style="color:var(--mit-red); font-weight:600;">View in dashboard →</a>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Project Information</div>
+          <div class="form-group">
+            <label class="form-label" for="subTitle">Research Title *</label>
+            <input type="text" id="subTitle" class="form-input" placeholder="Full title of your research paper"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subCategory">Research Category *</label>
+            <select id="subCategory" class="form-input">
+              <option value="">Select a category</option>
+              <option>Health & Life Sciences</option>
+              <option>Engineering & Technology</option>
+              <option>Physical & Chemical Sciences</option>
+              <option>Environmental & Earth Sciences</option>
+              <option>Social Sciences, Humanities & Policy</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subAbstract">Abstract *</label>
+            <textarea id="subAbstract" class="form-input" rows="4" placeholder="Brief description of your research (100–300 words)" style="resize:vertical;"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="subKeywords">Keywords</label>
+            <input type="text" id="subKeywords" class="form-input" placeholder="e.g. machine learning, cancer, imaging (comma-separated)"/>
+          </div>
+        </div>
+
+        <div class="form-section">
+          <div class="form-section-title">Upload Paper</div>
+          <div class="file-upload" onclick="document.getElementById('subFile').click()">
+            <div class="file-upload-icon">📎</div>
+            <p><strong>Click to upload</strong> your research paper</p>
+            <p style="font-size:0.78rem; color:var(--gray-4); margin-top:6px;">PDF only · Max 20MB</p>
+            <input type="file" id="subFile" accept=".pdf"/>
+          </div>
+          <div id="subFileDisplay" style="font-size:0.82rem; color:var(--mit-red); margin-top:8px; display:none;"></div>
+        </div>
+
+        <div class="form-section" style="border:none; padding:0;">
+          <div class="alert alert-warning">
+            <span>💳</span> This additional project will incur a <strong>$10</strong> fee billed to your account.
+          </div>
+          <button class="btn-primary" style="width:100%; padding:15px; font-size:1rem; margin-top:8px;" onclick="handleSubmit()">Submit Project →</button>
+          <p style="text-align:center; font-size:0.82rem; color:var(--gray-3); margin-top:14px;"><a href="dashboard.html" style="color:var(--mit-red);">← Back to Dashboard</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LOGGED OUT: gate view -->
+<div id="loggedOutView" style="display:none;">
+  <div style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 100px 24px 40px; background: var(--off-white);">
+    <div style="max-width: 560px; width:100%; background: var(--white); border: 1px solid var(--gray-5); border-radius: var(--radius); padding: 60px 48px; box-shadow: var(--shadow-lg); text-align: center;">
+      <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" style="width:60px; height:60px; object-fit:contain; margin: 0 auto 24px;"/>
+      <h1 style="font-family:var(--font-serif); font-size:1.8rem; color:var(--dark); margin-bottom:12px;">Submit Your Research</h1>
+      <p style="color:var(--gray-3); font-size:0.95rem; margin-bottom:40px; line-height:1.7;">To submit your research paper and join the MIT Critical Data Global Research Challenge, you'll need to create a free account first.</p>
+
+      <div style="background:var(--off-white); border-radius:var(--radius-sm); padding:24px; margin-bottom:32px; text-align:left;">
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="display:flex; gap:12px; align-items:center;">
+            <span style="width:28px; height:28px; background:var(--mit-red); border-radius:50%; color:white; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">1</span>
+            <span style="font-size:0.875rem; color:var(--gray-2);">Create your account (free)</span>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <span style="width:28px; height:28px; background:var(--mit-red); border-radius:50%; color:white; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">2</span>
+            <span style="font-size:0.875rem; color:var(--gray-2);">Complete competition registration ($30 entry fee)</span>
+          </div>
+          <div style="display:flex; gap:12px; align-items:center;">
+            <span style="width:28px; height:28px; background:var(--mit-red); border-radius:50%; color:white; display:flex; align-items:center; justify-content:center; font-size:0.75rem; font-weight:700; flex-shrink:0;">3</span>
+            <span style="font-size:0.875rem; color:var(--gray-2);">Submit your research paper(s)</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="register.html" class="btn-primary btn-large" style="display:block; margin-bottom:14px;">Create Account & Submit →</a>
+      <p style="font-size:0.85rem; color:var(--gray-3);">Already have an account? <a href="login.html" style="color:var(--mit-red); font-weight:600;">Sign in here</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="main.js"></script>
+<script>
+const session = JSON.parse(localStorage.getItem('mitrc_session') || 'null');
+
+if (session) {
+  document.getElementById('loggedInView').style.display = 'block';
+  // Update nav login button
+  const loginBtn = document.querySelector('.nav-login-btn');
+  if (loginBtn) { loginBtn.textContent = 'Dashboard'; loginBtn.href = 'dashboard.html'; }
+} else {
+  document.getElementById('loggedOutView').style.display = 'block';
+}
+
+document.getElementById('subFile')?.addEventListener('change', function() {
+  const fname = this.files[0]?.name;
+  const d = document.getElementById('subFileDisplay');
+  if (fname) { d.textContent = '📎 ' + fname; d.style.display = 'block'; }
+});
+
+function handleSubmit() {
+  const title = document.getElementById('subTitle').value.trim();
+  const category = document.getElementById('subCategory').value;
+  const abstract = document.getElementById('subAbstract').value.trim();
+  if (!title || !category || !abstract) { alert('Please fill in all required fields.'); return; }
+
+  const users = JSON.parse(localStorage.getItem('mitrc_users') || '[]');
+  const idx = users.findIndex(u => u.id === session.id);
+  if (idx !== -1) {
+    users[idx].submissions = users[idx].submissions || [];
+    users[idx].submissions.push({ id: 'sub_' + Date.now(), title, category, abstract, status: 'pending', submittedAt: new Date().toISOString() });
+    localStorage.setItem('mitrc_users', JSON.stringify(users));
+  }
+
+  document.getElementById('subTitle').value = '';
+  document.getElementById('subCategory').value = '';
+  document.getElementById('subAbstract').value = '';
+  document.getElementById('dashSubmitSuccess').style.display = 'flex';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
