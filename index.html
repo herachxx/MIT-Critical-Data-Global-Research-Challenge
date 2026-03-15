@@ -1,22 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="MIT Critical Data Global Research Challenge — Premier international student research competition. $10,000+ in awards. Hosted by NSRI × Synthica."/>
   <title>MIT Critical Data Global Research Challenge</title>
   <link rel="icon" type="image/png" href="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="navbar" id="navbar">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="nav-logo-img"/>
+    <a href="index.html" class="nav-logo" aria-label="Home">
+      <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="MIT Critical Data" class="nav-logo-img"/>
+      <span class="nav-logo-text">MIT Critical Data<br/>Research Challenge</span>
     </a>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
@@ -25,188 +26,142 @@
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="submit.html">Submit</a></li>
-      <li><a href="login.html" class="nav-login-btn">Login</a></li>
+      <li><a href="login.html" class="nav-cta">Login</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="#about">About</a>
+  <a href="#categories">Categories</a>
+  <a href="#timeline">Timeline</a>
+  <a href="#faq">FAQ</a>
+  <a href="submit.html">Submit</a>
+  <a href="login.html" class="m-cta">Login</a>
+</div>
 
 <!-- HERO -->
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <div class="hero-badge">NSRI × Synthica Presents</div>
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      NSRI × Synthica Continental Competition
+    </div>
     <h1 class="hero-title">MIT Critical Data<br/><em>Global Research</em><br/>Challenge</h1>
-    <p class="hero-subtitle">A premier international research competition uniting student scientists, engineers, and innovators to advance humanity through data-driven discovery.</p>
+    <p class="hero-sub">A premier international competition uniting student scientists, engineers, and innovators to advance humanity through data-driven discovery.</p>
     <div class="hero-stats">
-      <div class="stat-pill">
-        <span class="stat-num">$10,000+</span>
-        <span class="stat-label">Student Awards</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-num">300+</span>
-        <span class="stat-label">Recognized</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-num">5</span>
-        <span class="stat-label">Categories</span>
-      </div>
-      <div class="stat-pill">
-        <span class="stat-num">Global</span>
-        <span class="stat-label">Competition</span>
-      </div>
+      <div class="stat-pill"><span class="stat-num">$10K+</span><span class="stat-label">Student Awards</span></div>
+      <div class="stat-pill"><span class="stat-num">300+</span><span class="stat-label">Recognized</span></div>
+      <div class="stat-pill"><span class="stat-num">5</span><span class="stat-label">Categories</span></div>
+      <div class="stat-pill"><span class="stat-num">Global</span><span class="stat-label">Reach</span></div>
     </div>
     <div class="hero-actions">
-      <a href="register.html" class="btn-primary">Sign Up & Submit Research</a>
-      <a href="#about" class="btn-ghost">Learn More</a>
+      <a href="register.html" class="btn-primary btn-lg">Sign Up &amp; Submit Research</a>
+      <a href="#about" class="btn-ghost btn-lg">Learn More</a>
     </div>
   </div>
-  <div class="hero-scroll-hint">
-    <span>Scroll to explore</span>
-    <div class="scroll-arrow"></div>
+  <div class="hero-scroll" aria-hidden="true">
+    <span>Scroll</span>
+    <div class="scroll-bar"></div>
   </div>
 </section>
 
-<!-- PRIZE BANNER -->
-<section class="prize-banner">
+<!-- AWARDS -->
+<section class="awards" id="awards">
   <div class="container">
-    <div class="prize-banner-label">$13,000+ Total Funding · $10,000 Student Awards</div>
-    <h2 class="prize-banner-title">Awards &amp; Recognition</h2>
+    <div class="awards-kicker">$13,000+ Total Funding · $10,000 Student Awards</div>
+    <h2 class="awards-title">Awards &amp; Recognition</h2>
 
-    <!-- Global Grand Award -->
-    <div class="award-block">
-      <div class="award-block-header">
+    <div class="award-block reveal">
+      <div class="award-block-hd">
         <span class="award-block-icon">🌐</span>
         <div>
           <div class="award-block-name">Global Grand Award</div>
-          <div class="award-block-sub">Top 3 papers globally</div>
+          <div class="award-block-sub">Top 3 papers globally · Judged by PhD researchers, Associate Professors &amp; Professors</div>
         </div>
       </div>
       <div class="prize-grid">
-        <div class="prize-card gold">
-          <div class="prize-rank">🥇 1st Place</div>
-          <div class="prize-amount">$1,500</div>
-          <div class="prize-desc">Global Grand Award</div>
-        </div>
-        <div class="prize-card silver">
-          <div class="prize-rank">🥈 2nd Place</div>
-          <div class="prize-amount">$500</div>
-          <div class="prize-desc">Global Grand Award</div>
-        </div>
-        <div class="prize-card bronze">
-          <div class="prize-rank">🥉 3rd Place</div>
-          <div class="prize-amount">$250</div>
-          <div class="prize-desc">Global Grand Award</div>
-        </div>
+        <div class="prize-card gold reveal d1"><div class="prize-rank">🥇 1st Place</div><div class="prize-amount">$1,500</div><div class="prize-desc">Global Grand Award</div></div>
+        <div class="prize-card silver reveal d2"><div class="prize-rank">🥈 2nd Place</div><div class="prize-amount">$500</div><div class="prize-desc">Global Grand Award</div></div>
+        <div class="prize-card bronze reveal d3"><div class="prize-rank">🥉 3rd Place</div><div class="prize-amount">$250</div><div class="prize-desc">Global Grand Award</div></div>
       </div>
     </div>
 
-    <!-- Best Paper Award -->
-    <div class="award-block">
-      <div class="award-block-header">
+    <div class="award-block reveal">
+      <div class="award-block-hd">
         <span class="award-block-icon">📄</span>
         <div>
           <div class="award-block-name">Best Paper Award</div>
-          <div class="award-block-sub">Awarded per category — 1st, 2nd &amp; 3rd Place in each of the 5 categories</div>
+          <div class="award-block-sub">Awarded per category — 1st, 2nd &amp; 3rd place in each of the 5 research categories</div>
         </div>
       </div>
     </div>
 
-    <!-- Recognition Tiers -->
-    <div class="recognition-tiers">
-      <div class="tier-card tier-finalist">
+    <div class="tiers">
+      <div class="tier tier-a reveal d1">
         <div class="tier-icon">🎓</div>
         <div class="tier-name">Global Finalist</div>
         <div class="tier-count">Top 40 Researchers</div>
         <div class="tier-desc">Selected after final judging by PhD researchers, Associate Professors, and Professors.</div>
         <ul class="tier-perks">
-          <li>✦ Official Global Finalist Recognition</li>
-          <li>✦ Publish research on the NSRI Website</li>
-          <li>✦ Featured on NSRI Research Showcase</li>
+          <li>Official Global Finalist Recognition</li>
+          <li>Publish research on the NSRI Website</li>
+          <li>Featured on NSRI Research Showcase</li>
         </ul>
       </div>
-      <div class="tier-card tier-semi">
+      <div class="tier tier-b reveal d2">
         <div class="tier-icon">🏅</div>
         <div class="tier-name">Semi-Finalist</div>
         <div class="tier-count">Top 100 Researchers</div>
         <div class="tier-desc">Selected after Round 2 review. Official semi-finalist recognition and certificate.</div>
         <ul class="tier-perks">
-          <li>✦ Official Semi-Finalist Certificate</li>
-          <li>✦ NSRI Recognition Letter</li>
+          <li>Official Semi-Finalist Certificate</li>
+          <li>NSRI Recognition Letter</li>
         </ul>
       </div>
-      <div class="tier-card tier-distinction">
+      <div class="tier tier-c reveal d3">
         <div class="tier-icon">⭐</div>
-        <div class="tier-name">Research Distinction Award</div>
+        <div class="tier-name">Research Distinction</div>
         <div class="tier-count">Top 300 Researchers</div>
-        <div class="tier-desc">Awarded after the open submission round in recognition of outstanding research submissions.</div>
+        <div class="tier-desc">Awarded after the open submission round for outstanding research submissions.</div>
         <ul class="tier-perks">
-          <li>✦ Research Distinction Certificate</li>
-          <li>✦ Competition Recognition</li>
+          <li>Research Distinction Certificate</li>
+          <li>Competition Recognition</li>
         </ul>
       </div>
     </div>
-
-    <div class="prize-note">Judged by PhD researchers, Associate Professors &amp; Professors · Winners announced June 13</div>
+    <div class="awards-note">Winners announced same day · June 13</div>
   </div>
 </section>
 
 <!-- ABOUT -->
 <section class="section" id="about">
   <div class="container">
-    <div class="section-label">About the Competition</div>
+    <div class="eyebrow">About the Competition</div>
     <h2 class="section-title">Where Student Research<br/>Meets Global Impact</h2>
     <div class="about-grid">
-      <div class="about-text">
+      <div class="about-body">
         <p>The MIT Critical Data Global Research Challenge is a continental research competition hosted by the <strong>National Student Researchers Institute (NSRI)</strong> in partnership with <strong>Synthica</strong>. This competition invites students from all disciplines to submit original research papers for review by leading professors and industry experts.</p>
         <p>Modeled after elite competitions like <strong>iGO, KSEF, iSEF, Regeneron,</strong> and <strong>YISF</strong> — our challenge provides students a prestigious platform to present groundbreaking research, earn recognition, and compete for over <strong>$10,000 in student awards</strong>.</p>
         <div class="about-highlights">
-          <div class="highlight-item">
-            <span class="highlight-icon">📄</span>
-            <div>
-              <strong>Online Paper Submission</strong>
-              <span>All academic fields accepted</span>
-            </div>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">🔍</span>
-            <div>
-              <strong>Blind Peer Review</strong>
-              <span>2 expert reviewers per paper</span>
-            </div>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">🎤</span>
-            <div>
-              <strong>Finals Presentation</strong>
-              <span>Oral Q&A with professor judges</span>
-            </div>
-          </div>
-          <div class="highlight-item">
-            <span class="highlight-icon">👥</span>
-            <div>
-              <strong>Team Size</strong>
-              <span>Up to 3 members per team</span>
-            </div>
-          </div>
+          <div class="hi-item reveal"><span class="hi-icon">📄</span><div><strong>Online Submission</strong><span>All academic fields accepted</span></div></div>
+          <div class="hi-item reveal d1"><span class="hi-icon">🔍</span><div><strong>Blind Peer Review</strong><span>2 expert reviewers per paper</span></div></div>
+          <div class="hi-item reveal d2"><span class="hi-icon">🎤</span><div><strong>Finals Presentation</strong><span>Oral Q&amp;A with professor judges</span></div></div>
+          <div class="hi-item reveal d3"><span class="hi-icon">👥</span><div><strong>Team Entries</strong><span>Up to 3 members per team</span></div></div>
         </div>
       </div>
-      <div class="about-fees-card">
+      <div class="fees-card reveal">
         <h3>Entry Fees</h3>
-        <div class="fee-item">
-          <span>Registration + 1 Submission</span>
-          <strong>$30</strong>
-        </div>
-        <div class="fee-divider"></div>
-        <div class="fee-item">
-          <span>Each Additional Project</span>
-          <strong>+$10</strong>
-        </div>
-        <div class="fee-note">All fees go toward prize operations and award distribution</div>
-        <a href="register.html" class="btn-primary full-width">Register Now</a>
+        <div class="fee-row"><span>Registration + 1 Submission</span><strong>$30</strong></div>
+        <div class="fee-row"><span>Each Additional Project</span><strong>+$10</strong></div>
+        <div class="fee-note">All fees support prize operations, review processes, and award distribution.</div>
+        <a href="register.html" class="btn-primary btn-full">Register Now →</a>
       </div>
     </div>
   </div>
@@ -215,34 +170,14 @@
 <!-- CATEGORIES -->
 <section class="section section-alt" id="categories">
   <div class="container">
-    <div class="section-label">Research Areas</div>
+    <div class="eyebrow">Research Areas</div>
     <h2 class="section-title">Competition Categories</h2>
-    <div class="categories-grid">
-      <div class="category-card">
-        <div class="cat-icon">🧬</div>
-        <h3>Health & Life Sciences</h3>
-        <p>Biology, medicine, neuroscience, public health, biotechnology, and biomedical engineering research.</p>
-      </div>
-      <div class="category-card">
-        <div class="cat-icon">⚙️</div>
-        <h3>Engineering & Technology</h3>
-        <p>Computer science, AI/ML, electrical, mechanical, and software engineering innovations.</p>
-      </div>
-      <div class="category-card">
-        <div class="cat-icon">⚗️</div>
-        <h3>Physical & Chemical Sciences</h3>
-        <p>Physics, chemistry, materials science, nanotechnology, and quantum research.</p>
-      </div>
-      <div class="category-card">
-        <div class="cat-icon">🌍</div>
-        <h3>Environmental & Earth Sciences</h3>
-        <p>Climate science, ecology, geology, sustainability, and environmental policy research.</p>
-      </div>
-      <div class="category-card">
-        <div class="cat-icon">📊</div>
-        <h3>Social Sciences, Humanities & Policy</h3>
-        <p>Economics, sociology, political science, psychology, history, and public policy.</p>
-      </div>
+    <div class="cat-grid">
+      <div class="cat-card reveal d1"><div class="cat-icon">🧬</div><h3>Health &amp; Life Sciences</h3><p>Biology, medicine, neuroscience, public health, biotechnology, and biomedical engineering.</p></div>
+      <div class="cat-card reveal d2"><div class="cat-icon">⚙️</div><h3>Engineering &amp; Technology</h3><p>Computer science, AI/ML, electrical, mechanical, and software engineering innovations.</p></div>
+      <div class="cat-card reveal d3"><div class="cat-icon">⚗️</div><h3>Physical &amp; Chemical Sciences</h3><p>Physics, chemistry, materials science, nanotechnology, and quantum research.</p></div>
+      <div class="cat-card reveal d4"><div class="cat-icon">🌍</div><h3>Environmental &amp; Earth Sciences</h3><p>Climate science, ecology, geology, sustainability, and environmental policy.</p></div>
+      <div class="cat-card reveal d5"><div class="cat-icon">📊</div><h3>Social Sciences, Humanities &amp; Policy</h3><p>Economics, sociology, political science, psychology, history, and public policy.</p></div>
     </div>
   </div>
 </section>
@@ -250,40 +185,24 @@
 <!-- TIMELINE -->
 <section class="section" id="timeline">
   <div class="container">
-    <div class="section-label">Important Dates</div>
+    <div class="eyebrow">Important Dates</div>
     <h2 class="section-title">Competition Timeline</h2>
     <div class="timeline">
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">May 30</div>
-        <div class="timeline-content">
-          <h3>Paper Submission Deadline</h3>
-          <p>All fields accepted. Online submission portal closes at 11:59 PM EST.</p>
-        </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot-col"><div class="tl-dot"></div></div>
+        <div class="tl-body"><div class="tl-date">May 30</div><h3>Paper Submission Deadline</h3><p>All fields accepted. Online submission portal closes at 11:59 PM EST.</p></div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">May 31 – Jun 6</div>
-        <div class="timeline-content">
-          <h3>Blind Review Period</h3>
-          <p>2 expert reviewers per paper. Top 300 receive Research Distinction Award. Top 100 Semi-Finalists shortlisted.</p>
-        </div>
+      <div class="tl-item reveal d1">
+        <div class="tl-dot-col"><div class="tl-dot"></div></div>
+        <div class="tl-body"><div class="tl-date">May 31 – Jun 6</div><h3>Blind Review Period</h3><p>2 expert reviewers per paper. Top 300 → Research Distinction · Top 100 → Semi-Finalist · Top 40 → Global Finalist.</p></div>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">Jun 7 – Jun 10</div>
-        <div class="timeline-content">
-          <h3>Finalist Confirmation</h3>
-          <p>Top 40 Global Finalists confirmed. Presentation preparation, travel and logistics coordination.</p>
-        </div>
+      <div class="tl-item reveal d2">
+        <div class="tl-dot-col"><div class="tl-dot"></div></div>
+        <div class="tl-body"><div class="tl-date">Jun 7 – Jun 10</div><h3>Finalist Confirmation</h3><p>Top 40 Global Finalists confirmed. Presentation preparation and travel logistics coordination.</p></div>
       </div>
-      <div class="timeline-item active">
-        <div class="timeline-dot"></div>
-        <div class="timeline-date">June 13</div>
-        <div class="timeline-content">
-          <h3>Finals Day 🏆</h3>
-          <p>Oral presentation + Q&A with professor judges. Winners announced same day.</p>
-        </div>
+      <div class="tl-item active reveal d3">
+        <div class="tl-dot-col"><div class="tl-dot"></div></div>
+        <div class="tl-body"><div class="tl-date">June 13</div><h3>Finals Day 🏆</h3><p>Oral presentation + Q&amp;A with professor judges. Grand Award and Best Paper winners announced same day.</p></div>
       </div>
     </div>
   </div>
@@ -292,90 +211,76 @@
 <!-- PARTNERS -->
 <section class="section section-alt" id="partners">
   <div class="container">
-    <div class="section-label">Program Partners</div>
+    <div class="eyebrow">Program Partners</div>
     <h2 class="section-title">Supported By</h2>
-    <div class="partners-grid">
-      <div class="partner-logo-wrap">
-        <img src="assets/MIT-university-logo.png" alt="MIT University"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/MIT-critical-data-logo.png" alt="MIT Critical Data"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/Stanford-university-logo.png" alt="Stanford University"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/NSRI_logo.png" alt="NSRI"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/synthica-logo.jpg" alt="Synthica"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/HackClub-logo.jpg" alt="Hack Club"/>
-      </div>
-      <div class="partner-logo-wrap">
-        <img src="assets/ColdMatch-logo.jpg" alt="ColdMatch"/>
-      </div>
+    <div class="partners-wrap">
+      <div class="partner reveal d1"><img src="assets/MIT-university-logo.png" alt="MIT University" loading="lazy"/></div>
+      <div class="partner reveal d2"><img src="assets/MIT-critical-data-logo.png" alt="MIT Critical Data" loading="lazy"/></div>
+      <div class="partner reveal d3"><img src="assets/Stanford-university-logo.png" alt="Stanford University" loading="lazy"/></div>
+      <div class="partner reveal d1"><img src="assets/NSRI_logo.png" alt="NSRI" loading="lazy"/></div>
+      <div class="partner reveal d2"><img src="assets/synthica-logo.jpg" alt="Synthica" loading="lazy"/></div>
+      <div class="partner reveal d3"><img src="assets/HackClub-logo.jpg" alt="Hack Club" loading="lazy"/></div>
+      <div class="partner reveal d4"><img src="assets/ColdMatch-logo.jpg" alt="ColdMatch" loading="lazy"/></div>
     </div>
   </div>
 </section>
 
-<!-- PARTNER COMPETITIONS -->
+<!-- PEER COMPETITIONS -->
 <section class="section" id="peer-competitions">
   <div class="container">
-    <div class="section-label">Peer Competitions</div>
+    <div class="eyebrow">Peer Competitions</div>
     <h2 class="section-title">In Good Company</h2>
-    <p style="color:var(--gray-2); max-width:600px; margin-bottom:48px; font-size:1rem;">The MIT Critical Data Global Research Challenge is modeled after and recognized alongside the world's most prestigious student research competitions.</p>
-    <div class="peer-comps-grid">
-      <div class="peer-comp-card"><span class="peer-comp-name">iGO</span><span class="peer-comp-label">International Competition</span></div>
-      <div class="peer-comp-card"><span class="peer-comp-name">KSEF</span><span class="peer-comp-label">Kentucky Science &amp; Engineering Fair</span></div>
-      <div class="peer-comp-card"><span class="peer-comp-name">iSEF</span><span class="peer-comp-label">International Science &amp; Engineering Fair</span></div>
-      <div class="peer-comp-card"><span class="peer-comp-name">Regeneron</span><span class="peer-comp-label">Science Talent Search</span></div>
-      <div class="peer-comp-card"><span class="peer-comp-name">YISF</span><span class="peer-comp-label">Youth International Science Fair</span></div>
+    <p style="color:var(--muted);max-width:540px;margin-bottom:44px;font-size:1rem;line-height:1.75;">Modeled after and recognized alongside the world's most prestigious student research competitions.</p>
+    <div class="peer-grid">
+      <div class="peer-card reveal d1"><span class="peer-name">iGO</span><span class="peer-label">International Competition</span></div>
+      <div class="peer-card reveal d2"><span class="peer-name">KSEF</span><span class="peer-label">Kentucky Science &amp; Engineering Fair</span></div>
+      <div class="peer-card reveal d3"><span class="peer-name">iSEF</span><span class="peer-label">International Science &amp; Engineering Fair</span></div>
+      <div class="peer-card reveal d4"><span class="peer-name">Regeneron</span><span class="peer-label">Science Talent Search</span></div>
+      <div class="peer-card reveal d5"><span class="peer-name">YISF</span><span class="peer-label">Youth International Science Fair</span></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="section" id="faq">
+<section class="section section-alt" id="faq">
   <div class="container">
-    <div class="section-label">Questions</div>
+    <div class="eyebrow">Questions</div>
     <h2 class="section-title">Frequently Asked Questions</h2>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-question">Who can participate?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>The competition is open to all student researchers globally. Teams of up to 3 members are allowed. All academic fields and disciplines are welcome.</p></div>
+      <div class="faq-item reveal">
+        <button class="faq-q">Who can participate? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>The competition is open to all student researchers globally. Teams of up to 3 members are allowed. All academic fields and disciplines are welcome.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">What is the entry fee?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>The entry fee is <strong>$30</strong> for registration and one project submission. Each additional project submitted costs an extra <strong>$10</strong>.</p></div>
+      <div class="faq-item reveal d1">
+        <button class="faq-q">What is the entry fee? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>The entry fee is <strong>$30</strong> for registration and one project submission. Each additional project submitted costs an extra <strong>$10</strong>. Fees support prize operations and award distribution.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">Can I submit multiple projects?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>Yes! You may submit multiple projects. Your initial $30 covers your first submission. Each additional project is $10.</p></div>
+      <div class="faq-item reveal d2">
+        <button class="faq-q">Can I submit multiple projects? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>Yes! Your initial $30 covers your first submission. Each additional project is $10. There is no stated maximum on additional submissions.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">How are papers reviewed?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>All submissions go through a blind review process with 2 expert reviewers per paper. Top 300 receive the Research Distinction Award, top 100 advance as Semi-Finalists, and the top 40 become Global Finalists who present orally on Finals Day.</p></div>
+      <div class="faq-item reveal d3">
+        <button class="faq-q">How are papers reviewed? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>All submissions go through blind peer review with 2 expert reviewers per paper. Top 300 receive Research Distinction, top 100 become Semi-Finalists, and the top 40 advance as Global Finalists for oral presentation on Finals Day.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">What format should my paper be in?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>Papers should be submitted as PDF documents following standard academic research format. Detailed guidelines will be provided upon registration.</p></div>
+      <div class="faq-item reveal d4">
+        <button class="faq-q">What format should my paper be in? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>Papers should be submitted as PDF documents following standard academic research format. Detailed formatting guidelines will be provided upon registration.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question">Where are the finals held?<span class="faq-arrow">↓</span></button>
-        <div class="faq-answer"><p>Finals will be held on June 13. Location details and travel coordination information will be provided to confirmed finalists during June 7–10.</p></div>
+      <div class="faq-item reveal d5">
+        <button class="faq-q">Where are the finals held? <span class="faq-icon">↓</span></button>
+        <div class="faq-a"><p>Finals will be held on June 13. Location details and travel coordination will be provided to confirmed Global Finalists during June 7–10.</p></div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-section">
+<section class="cta">
   <div class="container">
     <h2 class="cta-title">Ready to Make Your Mark?</h2>
     <p class="cta-sub">Join researchers from around the world. Submit your paper, compete for over $10,000 in student awards, and earn global recognition.</p>
-    <a href="register.html" class="btn-primary btn-large">Start Your Application →</a>
+    <a href="register.html" class="btn-primary btn-lg">Start Your Application →</a>
   </div>
 </section>
 
@@ -384,21 +289,24 @@
   <div class="container">
     <div class="footer-top">
       <div class="footer-brand">
-        <img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="footer-logo"/>
-        <span>MIT Critical Data<br/>Global Research Challenge</span>
+        <a href="index.html"><img src="assets/MIT-Critical-Data-Global-Research-Competition-website-logo.png" alt="Logo" class="footer-logo"/></a>
+        <span class="footer-brand-text">MIT Critical Data<br/>Global Research Challenge</span>
       </div>
-      <div class="footer-links">
+      <nav class="footer-nav" aria-label="Footer navigation">
         <a href="index.html">Home</a>
         <a href="#about">About</a>
+        <a href="#awards">Awards</a>
         <a href="#categories">Categories</a>
         <a href="#timeline">Timeline</a>
+        <a href="#partners">Partners</a>
         <a href="#faq">FAQ</a>
         <a href="submit.html">Submit</a>
         <a href="login.html">Login</a>
-      </div>
+      </nav>
     </div>
-    <div class="footer-bottom">
+    <div class="footer-bot">
       <p>© 2025 MIT Critical Data Global Research Challenge · NSRI × Synthica · All rights reserved.</p>
+      <p>$13,000+ total funding · $10,000 student awards · 300+ recognized researchers</p>
     </div>
   </div>
 </footer>
