@@ -99,18 +99,11 @@ June 13         Finals Day
 | Hack Club | Community partner |
 | ColdMatch | Technology partner |
 
----
-
-## Website Structure: 
-![ScreenShot](structure.png)
-
----
-
 ## Technical Overview
 
 ### Stack
 - **Pure HTML / CSS / JavaScript** - no build tools, no frameworks required
-- **Google Fonts** - Libre Baskerville (serif headings) + Inter (body)
+- **Google Forms** - for team registration & submit
 
 ### Design System
 
